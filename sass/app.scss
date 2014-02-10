@@ -1,3 +1,10 @@
 @import 'utils/reset';
 @import 'utils/grid';
 @import 'oceania/oceania';
+
+$total_width: 1140px;
+$gutter_width: 2%;
+
+body {
+	font-family: 'oceania';
+}
