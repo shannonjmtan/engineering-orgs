@@ -53,34 +53,55 @@ table {
 body {
   font-family: "oceania";
   font-size: 16px;
-  line-height: 1.25em; }
+  line-height: 1.25em;
+  color: #2d2f31; }
 
-.banner, .banner-home {
+.row {
+  *zoom: 1;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+
+h3 {
+  color: #1b5d9e;
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 1em; }
+
+p {
+  margin: .5em 0; }
+
+.banner {
   background-color: #1b5d9e;
   background-position: center;
   background-size: cover;
   height: 280px; }
-  .banner nav, .banner-home nav {
+  .banner nav {
     height: 70px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     vertical-align: center; }
-    .banner nav ul, .banner-home nav ul {
+    .banner nav ul {
       *zoom: 1;
       max-width: 1140px;
       margin-left: auto;
       margin-right: auto; }
-      .banner nav ul:before, .banner-home nav ul:before, .banner nav ul:after, .banner-home nav ul:after {
+      .banner nav ul:before, .banner nav ul:after {
         content: " ";
         display: table; }
-      .banner nav ul:after, .banner-home nav ul:after {
+      .banner nav ul:after {
         clear: both; }
-      .banner nav ul li, .banner-home nav ul li {
+      .banner nav ul li {
         display: inline;
         padding: 0 1em; }
-      .banner nav ul .title, .banner-home nav ul .title {
+      .banner nav ul .title {
         padding-left: 0;
         float: left; }
-    .banner nav a, .banner-home nav a {
+    .banner nav a {
       line-height: 70px;
       color: white;
       font-weight: bold;
@@ -88,36 +109,36 @@ body {
       letter-spacing: .1em;
       text-decoration: none;
       text-transform: uppercase; }
-    .banner nav h1, .banner-home nav h1 {
+    .banner nav h1 {
       font-size: 1.35em; }
-  .banner section, .banner-home section {
+  .banner section {
     *zoom: 1;
     max-width: 1140px;
     margin-left: auto;
     margin-right: auto; }
-    .banner section:before, .banner-home section:before, .banner section:after, .banner-home section:after {
+    .banner section:before, .banner section:after {
       content: " ";
       display: table; }
-    .banner section:after, .banner-home section:after {
+    .banner section:after {
       clear: both; }
-    .banner section article, .banner-home section article {
+    .banner section article {
       float: left;
       display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
+      margin-right: 4.21809%;
+      width: 47.89095%;
       color: #eae848;
       padding-top: 50px; }
-      .banner section article:last-child, .banner-home section article:last-child {
+      .banner section article:last-child {
         margin-right: 0; }
-      .banner section article h2, .banner-home section article h2 {
+      .banner section article h2 {
         font-weight: 200;
         font-size: 3em;
         line-height: 1em; }
-      .banner section article p, .banner-home section article p {
+      .banner section article p {
         font-size: 1.2em;
         line-height: 1.25em;
-        margin: 1.5em 0; }
-      .banner section article .button, .banner-home section article .button, .banner section article .button-main, .banner-home section article .button-main {
+        margin: 1em 0; }
+      .banner section article .button, .banner section article .button-main {
         display: inline-block;
         border-radius: 2px;
         padding: .85em 1em;
@@ -125,13 +146,27 @@ body {
         text-decoration: none;
         color: #eae848;
         border: 1px solid #eae848; }
-      .banner section article .button-main, .banner-home section article .button-main {
+      .banner section article .button-main {
         color: #1b5d9e;
         background-color: #eae848;
         font-weight: bold; }
 
-.banner-home {
+.home {
   height: 650px;
   background-image: url("../images/banners/boat.jpg"); }
-  .banner-home section article {
+  .home section article {
     padding-top: 150px; }
+
+.list {
+  background-image: url("../images/banners/baja.jpg"); }
+
+.blurbs {
+  padding: 2em 0; }
+  .blurbs article {
+    float: left;
+    display: block;
+    margin-right: 4.21809%;
+    width: 30.52127%;
+    padding: 2em 0; }
+    .blurbs article:last-child {
+      margin-right: 0; }
