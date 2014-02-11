@@ -1,7 +1,137 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
-  font-family: "oceania"; }
+  font-family: "oceania";
+  font-size: 16px;
+  line-height: 1.25em; }
+
+.banner, .banner-home {
+  background-color: #1b5d9e;
+  background-position: center;
+  background-size: cover;
+  height: 280px; }
+  .banner nav, .banner-home nav {
+    height: 70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    vertical-align: center; }
+    .banner nav ul, .banner-home nav ul {
+      *zoom: 1;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto; }
+      .banner nav ul:before, .banner-home nav ul:before, .banner nav ul:after, .banner-home nav ul:after {
+        content: " ";
+        display: table; }
+      .banner nav ul:after, .banner-home nav ul:after {
+        clear: both; }
+      .banner nav ul li, .banner-home nav ul li {
+        display: inline;
+        padding: 0 1em; }
+      .banner nav ul .title, .banner-home nav ul .title {
+        padding-left: 0;
+        float: left; }
+    .banner nav a, .banner-home nav a {
+      line-height: 70px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.15em;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase; }
+    .banner nav h1, .banner-home nav h1 {
+      font-size: 1.35em; }
+  .banner section, .banner-home section {
+    *zoom: 1;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto; }
+    .banner section:before, .banner-home section:before, .banner section:after, .banner-home section:after {
+      content: " ";
+      display: table; }
+    .banner section:after, .banner-home section:after {
+      clear: both; }
+    .banner section article, .banner-home section article {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%;
+      color: #eae848;
+      padding-top: 50px; }
+      .banner section article:last-child, .banner-home section article:last-child {
+        margin-right: 0; }
+      .banner section article h2, .banner-home section article h2 {
+        font-weight: 200;
+        font-size: 3em;
+        line-height: 1em; }
+      .banner section article p, .banner-home section article p {
+        font-size: 1.2em;
+        line-height: 1.25em;
+        margin: 1.5em 0; }
+      .banner section article .button, .banner-home section article .button, .banner section article .button-main, .banner-home section article .button-main {
+        display: inline-block;
+        border-radius: 2px;
+        padding: .85em 1em;
+        margin-right: 1em;
+        text-decoration: none;
+        color: #eae848;
+        border: 1px solid #eae848; }
+      .banner section article .button-main, .banner-home section article .button-main {
+        color: #1b5d9e;
+        background-color: #eae848;
+        font-weight: bold; }
+
+.banner-home {
+  height: 650px;
+  background-image: url("../images/banners/boat.jpg"); }
+  .banner-home section article {
+    padding-top: 150px; }

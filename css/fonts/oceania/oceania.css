@@ -22,7 +22,7 @@
     src: url('oceania-light-webfont.eot?#iefix') format('embedded-opentype'),
          url('oceania-light-webfont.woff') format('woff'),
          url('oceania-light-webfont.ttf') format('truetype');
-    font-weight: lighter;
+    font-weight: 200;
     font-style: normal;
 
 }
