@@ -88,31 +88,72 @@ p {
   background-size: cover;
   height: 280px; }
   .banner nav {
+    *zoom: 1;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2em;
+    padding-right: 2em;
     height: 70px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     vertical-align: center; }
-    .banner nav ul {
-      *zoom: 1;
-      max-width: 1140px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 2em;
-      padding-right: 2em; }
-      .banner nav ul:before, .banner nav ul:after {
-        content: " ";
-        display: table; }
-      .banner nav ul:after {
-        clear: both; }
-      @media screen and (max-width: 480px) {
-        .banner nav ul {
-          padding-left: 1em;
-          padding-right: 1em; } }
-      .banner nav ul li {
-        display: inline;
-        padding: 0 1em; }
-      .banner nav ul .title {
-        padding-left: 0;
-        float: left; }
+    .banner nav:before, .banner nav:after {
+      content: " ";
+      display: table; }
+    .banner nav:after {
+      clear: both; }
+    @media screen and (max-width: 480px) {
+      .banner nav {
+        padding-left: 1em;
+        padding-right: 1em; } }
+    .banner nav h1 {
+      padding-left: 0;
+      float: left; }
+    .banner nav .nav-opener {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      font-size: 2em; }
+      @media screen and (max-width: 768px) {
+        .banner nav .nav-opener {
+          display: inline; } }
+    .banner nav .nav-open {
+      display: block; }
+    @media screen and (max-width: 768px) {
+      .banner nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%; } }
+    .banner nav ul li {
+      display: inline;
+      padding: 0 1em; }
+      @media screen and (max-width: 768px) {
+        .banner nav ul li {
+          display: block;
+          padding: 0; }
+          .banner nav ul li a {
+            *zoom: 1;
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            display: block;
+            line-height: 3em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.3); }
+            .banner nav ul li a:before, .banner nav ul li a:after {
+              content: " ";
+              display: table; }
+            .banner nav ul li a:after {
+              clear: both; } }
+          @media screen and (max-width: 768px) and (max-width: 480px) {
+            .banner nav ul li a {
+              padding-left: 1em;
+              padding-right: 1em; } }
     .banner nav a {
       line-height: 70px;
       color: white;
@@ -121,12 +162,12 @@ p {
       letter-spacing: .1em;
       text-decoration: none;
       text-transform: uppercase; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 768px) {
         .banner nav a {
           font-size: 1.0em; } }
     .banner nav h1 {
       font-size: 1.35em; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 768px) {
         .banner nav h1 {
           font-size: 1.15em; } }
   .banner section {
@@ -208,3 +249,11 @@ p {
     padding: 2em 0; }
     .blurbs article:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 480px) {
+      .blurbs article {
+        float: left;
+        display: block;
+        margin-right: 4.21809%;
+        width: 100%; }
+        .blurbs article:last-child {
+          margin-right: 0; } }

@@ -4,5 +4,9 @@
 	article {
 		@include span-columns(4);
 		padding: ($gutter / 2) 0;
+		
+		@include media($mobile) {
+			@include span-columns(12);
+		}
 	}
 }

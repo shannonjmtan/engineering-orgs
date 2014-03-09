@@ -7,21 +7,58 @@
 
 	// Navigation at the top
 	nav {
+		@include container;
+
 		height: $nav-height;
 		border-bottom: 1px solid rgba(255, 255, 255, .2);
 		vertical-align: center;
 
+		h1 {
+			padding-left: 0;
+			float: left;
+		}
+
+		.nav-opener {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: none;
+			font-size: 2em;
+
+			@include media($tablet) {
+				display: inline;
+			}
+		}
+
+		.nav-open {
+			display: block;
+		}
+
 		ul {
-			@include container;
+			@include media($tablet) {
+				display: none;
+				position: absolute;
+				top: $nav-height;
+				left: 0;
+				width: 100%;
+			}
 
 			li {
 				display: inline;
 				padding: 0 1em;
-			}
 
-			.title {
-				padding-left: 0;
-				float: left;
+				@include media($tablet) {
+					display: block;
+					padding: 0;
+
+					a {
+						@include container;
+						display: block;
+						line-height: 3em;
+						border-bottom: 1px solid rgba(255, 255, 255, .2);
+						background-color: rgba(0, 0, 0, .3);
+					}
+				}
 			}
 		}
 
@@ -34,7 +71,7 @@
 			text-decoration: none;
 			text-transform: uppercase;
 
-			@include media($mobile) {
+			@include media($tablet) {
 				font-size: 1.0em;
 			}
 		}
@@ -42,7 +79,7 @@
 		h1 {
 			font-size: 1.35em;
 
-			@include media($mobile) {
+			@include media($tablet) {
 				font-size: 1.15em;
 			}
 		}
