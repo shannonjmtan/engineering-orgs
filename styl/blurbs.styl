@@ -1,0 +1,30 @@
+.blurbs
+	container()
+	clearfix()
+	margin-top (gutter-width * 2)
+	margin-bottom (gutter-width * 2)
+
+	article 
+		column(4)
+		padding (gutter-width / 2) 0
+
+		@media tablet
+			column(6)
+		
+		@media mobile
+			column(12)
+
+		i
+			float left
+			font-size 4em
+			color color-main
+
+		h3
+			margin-left (4.5em / 1.25em)
+			color color-main
+			font-weight bold
+			font-size 1.25em
+			line-height 1em
+
+		p
+			margin-left 4.5em

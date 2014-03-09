@@ -1,0 +1,129 @@
+.banner
+	height header-height
+	background-color color-main
+	background-position center
+	background-size cover
+
+	// Navigation
+	nav
+		container()
+		height nav-height
+		vertical-align center
+		overflow-x hidden
+		border-bottom 1px solid rgba(255, 255, 255, .2)
+
+		// We need an inner container element unfortunately because we need
+		// to have our columns inside containers
+		.inner
+			column(12)
+
+		ul
+			@media tablet
+				position absolute
+				top nav-height
+				left 0
+				display none
+				width 100%
+
+			li
+				display inline
+				padding 0 1em
+
+				@media tablet
+					display block
+					padding 0
+
+					a
+						column(12)
+						display block
+						line-height 3em
+						border-bottom 1px solid rgba(255, 255, 255, .2)
+						background-color rgba(0, 0, 0, .3)
+
+		// Link to open the menu on tablet devices
+		.nav-opener
+			position absolute
+			top 0
+			right (gutter-width / 2)
+			display none
+			font-size 2em
+
+			@media tablet
+				display inline
+
+		// Class applied on <ul> to open up the navigation on tablets
+		.nav-open
+			display block
+
+		h1
+			float left
+			padding-left 0
+			padding-right 1em
+			font-size 1.25em
+			font-weight bold
+
+			@media tablet
+				font-size: 1.15em
+
+		a
+			line-height nav-height
+			color nav-text-color
+			font-size 1.15em
+			letter-spacing 0.1em
+			text-decoration none
+			text-transform uppercase
+			-webkit-font-smoothing: antialiased;
+
+			@media tablet
+				font-size 1.0em
+
+	// Header 
+	section
+		container()
+		color color-accent
+
+		h2
+			column(12)
+			padding-top: 50px;
+			font-weight: 200;
+			font-size: 3em;
+			line-height: 1em;
+			-webkit-font-smoothing: antialiased;
+		
+		article
+			column(6)
+			@media small-desktop
+				column(12)
+
+			p
+				font-size: 1.2em;
+				line-height: 1.25em;
+				margin: 1em 0;
+
+			.button
+				display: inline-block;
+				border-radius: 2px;
+				padding: .85em 1em;
+				margin-right: 1em;
+				text-decoration: none;
+				color: color-accent;
+				border: 1px solid color-accent;
+
+				@media mobile
+					width 100%
+
+			.button-main
+				@extends .banner section article .button;
+				color: color-main;
+				background-color: color-accent;
+				font-weight: bold;
+
+.home
+	height: header-large-height;
+	background-image: url('../images/banners/boat.jpg');
+
+	section h2
+		padding-top: 150px;
+
+.list
+	background-image: url('../images/banners/baja.jpg');
