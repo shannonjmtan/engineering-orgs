@@ -12,7 +12,7 @@
 		vertical-align: center;
 
 		ul {
-			@include outer-container;
+			@include container;
 
 			li {
 				display: inline;
@@ -33,26 +33,39 @@
 			letter-spacing: .1em;
 			text-decoration: none;
 			text-transform: uppercase;
+
+			@include media($mobile) {
+				font-size: 1.0em;
+			}
 		}
 
 		h1 {
 			font-size: 1.35em;
+
+			@include media($mobile) {
+				font-size: 1.15em;
+			}
 		}
 	}
 
 	// Header 
 	section {
-		@include outer-container;
+		@include container;
+		color: $color-accent;
+
+		h2 {
+			@include span-columns(12);
+
+			padding-top: 50px;
+			font-weight: 200;
+			font-size: 3em;
+			line-height: 1em;
+		}
 
 		article {
 			@include span-columns(6);
-			color: $color-accent;
-			padding-top: 50px;
-
-			h2 {
-				font-weight: 200;
-				font-size: 3em;
-				line-height: 1em;
+			@include media($small-desktop) {
+				@include span-columns(12);
 			}
 
 			p {
@@ -85,7 +98,7 @@
 	height: $header-large-height;
 	background-image: url('../images/banners/boat.jpg');
 
-	section article {
+	section h2 {
 		padding-top: 150px;
 	}
 }

@@ -10,9 +10,20 @@ body {
 	color: $color-text;
 }
 
+@mixin container {
+	@include outer-container;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+
+	@include media($mobile) {
+		padding-left: $gutter / 4;
+		padding-right: $gutter / 4;
+	}
+}
+
 // A row in the grid system. Sometimes this is just necessary
 .row {
-	@include outer-container;
+	@include container;
 }
 
 h3 {

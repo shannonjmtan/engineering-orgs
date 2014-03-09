@@ -2,6 +2,11 @@
 $max-width: 1140px;
 $gutter: 4em;
 
+// Breakpoints
+$small-desktop: max-width 960px;
+$tablet: max-width 768px;
+$mobile: max-width 480px;
+
 // Colors
 $color-main: #1b5d9e;
 $color-accent: #eae848;

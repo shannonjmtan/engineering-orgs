@@ -60,12 +60,18 @@ body {
   *zoom: 1;
   max-width: 1140px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em; }
   .row:before, .row:after {
     content: " ";
     display: table; }
   .row:after {
     clear: both; }
+  @media screen and (max-width: 480px) {
+    .row {
+      padding-left: 1em;
+      padding-right: 1em; } }
 
 h3 {
   color: #1b5d9e;
@@ -89,12 +95,18 @@ p {
       *zoom: 1;
       max-width: 1140px;
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      padding-left: 2em;
+      padding-right: 2em; }
       .banner nav ul:before, .banner nav ul:after {
         content: " ";
         display: table; }
       .banner nav ul:after {
         clear: both; }
+      @media screen and (max-width: 480px) {
+        .banner nav ul {
+          padding-left: 1em;
+          padding-right: 1em; } }
       .banner nav ul li {
         display: inline;
         padding: 0 1em; }
@@ -109,31 +121,57 @@ p {
       letter-spacing: .1em;
       text-decoration: none;
       text-transform: uppercase; }
+      @media screen and (max-width: 480px) {
+        .banner nav a {
+          font-size: 1.0em; } }
     .banner nav h1 {
       font-size: 1.35em; }
+      @media screen and (max-width: 480px) {
+        .banner nav h1 {
+          font-size: 1.15em; } }
   .banner section {
     *zoom: 1;
     max-width: 1140px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: #eae848; }
     .banner section:before, .banner section:after {
       content: " ";
       display: table; }
     .banner section:after {
       clear: both; }
+    @media screen and (max-width: 480px) {
+      .banner section {
+        padding-left: 1em;
+        padding-right: 1em; } }
+    .banner section h2 {
+      float: left;
+      display: block;
+      margin-right: 4.21809%;
+      width: 100%;
+      padding-top: 50px;
+      font-weight: 200;
+      font-size: 3em;
+      line-height: 1em; }
+      .banner section h2:last-child {
+        margin-right: 0; }
     .banner section article {
       float: left;
       display: block;
       margin-right: 4.21809%;
-      width: 47.89095%;
-      color: #eae848;
-      padding-top: 50px; }
+      width: 47.89095%; }
       .banner section article:last-child {
         margin-right: 0; }
-      .banner section article h2 {
-        font-weight: 200;
-        font-size: 3em;
-        line-height: 1em; }
+      @media screen and (max-width: 960px) {
+        .banner section article {
+          float: left;
+          display: block;
+          margin-right: 4.21809%;
+          width: 100%; }
+          .banner section article:last-child {
+            margin-right: 0; } }
       .banner section article p {
         font-size: 1.2em;
         line-height: 1.25em;
@@ -154,7 +192,7 @@ p {
 .home {
   height: 650px;
   background-image: url("../images/banners/boat.jpg"); }
-  .home section article {
+  .home section h2 {
     padding-top: 150px; }
 
 .list {
