@@ -144,39 +144,12 @@ body {
 p {
   margin: 0.5em 0;
 }
-@media only screen and (max-width: 768px) {
-  .break-tablet {
-    *zoom: 1;
-  }
-  .break-tablet:before,
-  .break-tablet:after {
-    content: "";
-    display: table;
-  }
-  .break-tablet:after {
-    clear: both;
-  }
-}
-@media only screen and (min-width: 961px) {
-  .break-desktop {
-    *zoom: 1;
-  }
-  .break-desktop:before,
-  .break-desktop:after {
-    content: "";
-    display: table;
-  }
-  .break-desktop:after {
-    clear: both;
-  }
-}
 .blurbs {
   max-width: 1140px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  *zoom: 1;
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -192,12 +165,29 @@ p {
     padding-right: 10px;
   }
 }
-.blurbs:before,
-.blurbs:after {
+.blurbs .inner {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  width: 97.91666666666666%;
+  margin: 0 1.0416666666666665%;
+  *width: 97.91666666666666% -correction;
+  *margin: 0 1.0416666666666665% -correction;
+}
+.blurbs .blurb-table {
+  display: block;
+  width: 102.08333333333333%;
+  margin: 0 -1.0416666666666665%;
+  *width: 102.08333333333333% -correction;
+  *margin: 0 -1.0416666666666665% -correction;
+  *zoom: 1;
+}
+.blurbs .blurb-table:before,
+.blurbs .blurb-table:after {
   content: "";
   display: table;
 }
-.blurbs:after {
+.blurbs .blurb-table:after {
   clear: both;
 }
 .blurbs article {
@@ -234,7 +224,9 @@ p {
 }
 .blurbs article i {
   float: left;
-  font-size: 4em;
+  width: 50px;
+  text-align: right;
+  font-size: 3.5em;
   color: #1b5d9e;
 }
 .blurbs article h3 {
@@ -358,27 +350,36 @@ p {
     font-size: 1em;
   }
 }
-.banner section {
+.hero-unit {
   max-width: 1140px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  *zoom: 1;
   color: #eae848;
 }
 @media only screen and (max-width: 480px) {
-  .banner section {
+  .hero-unit {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .banner section {
+  .hero-unit {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-.banner section h2 {
+.hero-unit:before,
+.hero-unit:after {
+  content: "";
+  display: table;
+}
+.hero-unit:after {
+  clear: both;
+}
+.hero-unit h2 {
   display: inline;
   float: left;
   overflow: hidden;
@@ -392,7 +393,7 @@ p {
   line-height: 1em;
   -webkit-font-smoothing: antialiased;
 }
-.banner section article {
+.hero-unit article {
   display: inline;
   float: left;
   overflow: hidden;
@@ -402,7 +403,7 @@ p {
   *margin: 0 1.0416666666666665% -correction;
 }
 @media only screen and (max-width: 960px) {
-  .banner section article {
+  .hero-unit article {
     display: inline;
     float: left;
     overflow: hidden;
@@ -412,13 +413,13 @@ p {
     *margin: 0 1.0416666666666665% -correction;
   }
 }
-.banner section article p {
+.hero-unit article p {
   font-size: 1.2em;
   line-height: 1.25em;
   margin: 1em 0;
 }
-.banner section article .button,
-.banner section article .button-main {
+.hero-unit article .button,
+.hero-unit article .button-main {
   display: inline-block;
   border-radius: 2px;
   padding: 0.85em 1em;
@@ -428,12 +429,12 @@ p {
   border: 1px solid #eae848;
 }
 @media only screen and (max-width: 480px) {
-  .banner section article .button,
-.banner section article .button-main {
+  .hero-unit article .button,
+.hero-unit article .button-main {
     width: 100%;
   }
 }
-.banner section article .button-main {
+.hero-unit article .button-main {
   color: #1b5d9e;
   background-color: #eae848;
   font-weight: bold;

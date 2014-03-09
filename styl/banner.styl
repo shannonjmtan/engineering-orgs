@@ -1,3 +1,10 @@
+/*
+ * banner.styl
+ * Contains the styles for the hero unit banner as well as the navigation,
+ * since the navigation lives inside the banner most of the time
+ */
+
+// The parent banner element
 .banner
 	height header-height
 	background-color color-main
@@ -55,6 +62,7 @@
 		.nav-open
 			display block
 
+		// The name of the site
 		h1
 			float left
 			padding-left 0
@@ -63,7 +71,7 @@
 			font-weight bold
 
 			@media tablet
-				font-size: 1.15em
+				font-size 1.15em
 
 		a
 			line-height nav-height
@@ -72,58 +80,61 @@
 			letter-spacing 0.1em
 			text-decoration none
 			text-transform uppercase
-			-webkit-font-smoothing: antialiased;
+			-webkit-font-smoothing antialiased
 
 			@media tablet
 				font-size 1.0em
 
-	// Header 
-	section
-		container()
-		color color-accent
+// Hero unit content 
+.hero-unit
+	container()
+	clearfix()
+	color color-accent
 
-		h2
+	h2
+		column(12)
+		padding-top 50px
+		font-weight 200
+		font-size 3em
+		line-height 1em
+		-webkit-font-smoothing antialiased
+	
+	article
+		column(6)
+		@media small-desktop
 			column(12)
-			padding-top: 50px;
-			font-weight: 200;
-			font-size: 3em;
-			line-height: 1em;
-			-webkit-font-smoothing: antialiased;
-		
-		article
-			column(6)
-			@media small-desktop
-				column(12)
 
-			p
-				font-size: 1.2em;
-				line-height: 1.25em;
-				margin: 1em 0;
+		p
+			font-size 1.2em
+			line-height 1.25em
+			margin 1em 0
 
-			.button
-				display: inline-block;
-				border-radius: 2px;
-				padding: .85em 1em;
-				margin-right: 1em;
-				text-decoration: none;
-				color: color-accent;
-				border: 1px solid color-accent;
+		.button
+			display inline-block
+			border-radius 2px
+			padding .85em 1em
+			margin-right 1em
+			text-decoration none
+			color color-accent
+			border 1px solid color-accent
 
-				@media mobile
-					width 100%
+			@media mobile
+				width 100%
 
-			.button-main
-				@extends .banner section article .button;
-				color: color-main;
-				background-color: color-accent;
-				font-weight: bold;
+		.button-main
+			@extends .hero-unit article .button
+			color color-main
+			background-color color-accent
+			font-weight bold
 
+// Homepage banner -- much larger than normal
 .home
-	height: header-large-height;
-	background-image: url('../images/banners/boat.jpg');
+	height header-large-height
+	background-image url('../images/banners/boat.jpg')
 
 	section h2
-		padding-top: 150px;
+		padding-top 150px
 
+// List banner
 .list
-	background-image: url('../images/banners/baja.jpg');
+	background-image url('../images/banners/baja.jpg')
