@@ -1,0 +1,49 @@
+/*
+ * blurbs.styl
+ * Contains the styles for responsive 3-per-row blurbs with icons.
+ * On tablet devices, it's 2-per-row. On mobile devices, it's 1-per-row.
+ */
+
+.blurbs
+	// Hard-corded number of elements
+	number-of-elements = 6
+
+	container()
+	margin-top (gutter-width * 2)
+	margin-bottom (gutter-width * 2)
+
+	// An inner class is needed
+	.inner
+		column(12)
+
+	// Sets up the table rows
+	.blurb-table
+		row(number-of-elements)
+		clearfix()
+
+	article 
+		column(4, number-of-elements)
+		padding (gutter-width / 2) 0
+
+		@media tablet
+			column(6, number-of-elements)
+		
+		@media mobile
+			column(12, number-of-elements)
+
+		i
+			float left
+			width 50px
+			text-align right
+			font-size 3.5em
+			color color-main
+
+		h3
+			margin-left (4.5em / 1.25em)
+			color color-main
+			font-weight bold
+			font-size 1.25em
+			line-height 1em
+
+		p
+			margin-left 4.5em
