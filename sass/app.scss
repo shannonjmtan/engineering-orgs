@@ -1,0 +1,25 @@
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/transition";
+@import "breakpoint";
+@import "susy";
+
+@import "partials/variables";
+
+@mixin guttered-container() {
+	@include container;
+	padding-left: gutter();
+	padding-right: gutter();
+}
+
+body {
+	font: $base-font-size $base-font-family;
+	color: $color-text;
+}
+
+p {
+	line-height: $base-line-height;
+}
+
+@import "partials/banner";
+@import "partials/blurbs";
