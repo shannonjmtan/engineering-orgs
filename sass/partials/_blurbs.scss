@@ -1,0 +1,57 @@
+/*
+ * _blurbs.scss
+ * Contains the styles for responsive 3-per-row blurbs with icons.
+ * On tablet devices, it's 2-per-row. On mobile devices, it's 1-per-row.
+ */
+
+#blurbs {
+	@include guttered-container;
+	margin-top: gutter();
+	margin-bottom: gutter();
+
+	article {
+		margin-top: gutter();
+		margin-bottom: gutter();
+
+		@include breakpoint($desktop) {
+			@include gallery(4);
+		}
+
+		@include breakpoint($small-desktop) {
+			@include gallery(4);
+		}
+
+		@include breakpoint($tablet) {
+			@include gallery(6);
+		}
+
+		@include breakpoint($mobile) {
+			@include span(12);
+		}
+
+		.icon {
+			width: 50px;
+			float: left;
+			color: $color-main;
+			font-size: 3em;
+			text-align: center;
+		}
+
+		h3 {
+			margin-left: 50px;
+			padding-left: (gutter() / 2);
+			color: $color-main;
+			font-family: $header-font-family;
+			font-size: 1.15em;
+			font-weight: bold;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-left: 50px;
+			padding-left: (gutter() / 2);
+		}
+
+	}
+}
