@@ -74,7 +74,12 @@ p {
   line-height: 1.25em;
 }
 
-/* line 1, ../sass/partials/_banner.scss */
+/*
+ * _banner.scss
+ * Contains the styles for the hero unit banner as well as the navigation,
+ * since the navigation lives inside the banner most of the time
+ */
+/* line 7, ../sass/partials/_banner.scss */
 #toolbar {
   position: absolute;
   top: 0;
@@ -85,7 +90,7 @@ p {
   z-index: 10;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 11, ../sass/partials/_banner.scss */
+/* line 17, ../sass/partials/_banner.scss */
 #toolbar nav {
   max-width: 1200px;
   margin-left: auto;
@@ -106,14 +111,14 @@ p {
   display: block;
   clear: both;
 }
-/* line 20, ../sass/partials/_banner.scss */
+/* line 26, ../sass/partials/_banner.scss */
 #toolbar nav a {
   color: white;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 26, ../sass/partials/_banner.scss */
+/* line 32, ../sass/partials/_banner.scss */
 #toolbar nav a:hover {
   -moz-transition: color 0.35s ease-in-out;
   -o-transition: color 0.35s ease-in-out;
@@ -121,30 +126,30 @@ p {
   transition: color 0.35s ease-in-out;
   color: #eae848;
 }
-/* line 32, ../sass/partials/_banner.scss */
+/* line 38, ../sass/partials/_banner.scss */
 #toolbar nav h1 {
   margin-right: 1em;
   display: block;
   float: left;
   font-weight: bold;
 }
-/* line 39, ../sass/partials/_banner.scss */
+/* line 45, ../sass/partials/_banner.scss */
 #toolbar nav ul {
   display: inline;
 }
-/* line 43, ../sass/partials/_banner.scss */
+/* line 49, ../sass/partials/_banner.scss */
 #toolbar nav li {
   display: inline;
   margin: 0 0.4em;
   font-size: 0.9em;
 }
 @media (max-width: 480px) {
-  /* line 43, ../sass/partials/_banner.scss */
+  /* line 49, ../sass/partials/_banner.scss */
   #toolbar nav li {
     display: none;
   }
 }
-/* line 53, ../sass/partials/_banner.scss */
+/* line 59, ../sass/partials/_banner.scss */
 #toolbar nav .nav-opener {
   display: none;
   position: absolute;
@@ -153,13 +158,13 @@ p {
   font-size: 2em;
 }
 @media (max-width: 480px) {
-  /* line 53, ../sass/partials/_banner.scss */
+  /* line 59, ../sass/partials/_banner.scss */
   #toolbar nav .nav-opener {
     display: inline;
   }
 }
 
-/* line 67, ../sass/partials/_banner.scss */
+/* line 73, ../sass/partials/_banner.scss */
 .hero-unit {
   height: 280px;
   box-sizing: border-box;
@@ -170,7 +175,7 @@ p {
   color: #eae848;
   font-size: 18px;
 }
-/* line 77, ../sass/partials/_banner.scss */
+/* line 83, ../sass/partials/_banner.scss */
 .hero-unit .inner {
   max-width: 1200px;
   margin-left: auto;
@@ -184,14 +189,14 @@ p {
   display: block;
   clear: both;
 }
-/* line 81, ../sass/partials/_banner.scss */
+/* line 87, ../sass/partials/_banner.scss */
 .hero-unit h2 {
   font-family: "oceania", sans-serif;
   font-size: 2.5em;
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 88, ../sass/partials/_banner.scss */
+/* line 94, ../sass/partials/_banner.scss */
 .hero-unit p {
   width: 48.93617%;
   float: left;
@@ -200,7 +205,7 @@ p {
   margin-bottom: 0;
 }
 @media (min-width: 768px) and (max-width: 960px) {
-  /* line 88, ../sass/partials/_banner.scss */
+  /* line 94, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 74.46809%;
     float: left;
@@ -208,25 +213,25 @@ p {
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  /* line 88, ../sass/partials/_banner.scss */
+  /* line 94, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
 @media (max-width: 480px) {
-  /* line 88, ../sass/partials/_banner.scss */
+  /* line 94, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
-/* line 106, ../sass/partials/_banner.scss */
+/* line 112, ../sass/partials/_banner.scss */
 .hero-unit .actions {
   width: 100%;
   float: left;
 }
-/* line 110, ../sass/partials/_banner.scss */
+/* line 116, ../sass/partials/_banner.scss */
 .hero-unit .button, .hero-unit .button-main {
   display: inline-block;
   border-radius: 2px;
@@ -236,7 +241,7 @@ p {
   color: #eae848;
   border: 1px solid #eae848;
 }
-/* line 119, ../sass/partials/_banner.scss */
+/* line 125, ../sass/partials/_banner.scss */
 .hero-unit .button:hover, .hero-unit .button-main:hover {
   -moz-transition: background-color 0.35s ease-in-out;
   -o-transition: background-color 0.35s ease-in-out;
@@ -245,41 +250,41 @@ p {
   background-color: rgba(244, 243, 163, 0.2);
 }
 @media (max-width: 480px) {
-  /* line 110, ../sass/partials/_banner.scss */
+  /* line 116, ../sass/partials/_banner.scss */
   .hero-unit .button, .hero-unit .button-main {
     display: block;
   }
 }
-/* line 129, ../sass/partials/_banner.scss */
+/* line 135, ../sass/partials/_banner.scss */
 .hero-unit .button-main {
   color: #1b5d9e;
   background-color: #eae848;
   font-weight: bold;
 }
-/* line 135, ../sass/partials/_banner.scss */
+/* line 141, ../sass/partials/_banner.scss */
 .hero-unit .button-main:hover {
   background-color: #f4f3a3;
   border-color: #f4f3a3;
 }
 
-/* line 142, ../sass/partials/_banner.scss */
+/* line 148, ../sass/partials/_banner.scss */
 #hero-home {
   height: 650px;
   background-image: url("/images/banners/boat.jpg");
 }
-/* line 146, ../sass/partials/_banner.scss */
+/* line 152, ../sass/partials/_banner.scss */
 #hero-home .inner {
   margin-top: 180px;
 }
 @media (max-width: 480px) {
-  /* line 146, ../sass/partials/_banner.scss */
+  /* line 152, ../sass/partials/_banner.scss */
   #hero-home .inner {
     margin-top: 100px;
   }
 }
 
 /*
- * blurbs.styl
+ * _blurbs.scss
  * Contains the styles for responsive 3-per-row blurbs with icons.
  * On tablet devices, it's 2-per-row. On mobile devices, it's 1-per-row.
  */
