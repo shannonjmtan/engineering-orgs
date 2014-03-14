@@ -1,0 +1,26 @@
+body {
+	font: $base-font-size $base-font-family;
+	color: $color-text;
+}
+
+p {
+	line-height: $base-line-height;
+}
+
+a {
+	font-weight: bold;
+	color: $color-main;
+	text-decoration: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+h3 {
+	color: $color-main;
+	font-family: $header-font-family;
+	font-size: 1.15em;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+}

@@ -95,6 +95,7 @@
 		@include span(6);
 		margin-top: 1em;
 		margin-bottom: 0;
+		line-height: 1.25em;
 
 		@include breakpoint($small-desktop) {
 			@include span(9);
@@ -147,7 +148,7 @@
 
 #hero-home {
 	height: $header-large-height;
-	background-image: url('/images/banners/boat.jpg');
+	background-image: url('../images/banners/boat.jpg');
 
 	.inner {
 		margin-top: 180px;

@@ -2,6 +2,7 @@ $susy: (
 	columns: 12,
 	gutters: 1/3,
 	gutter-position: after,
+	global-box-sizing: border-box,
 	container: 1200px,
 	container-position: center
 );
@@ -15,14 +16,15 @@ $mobile: max-width 480px;
 // Typography
 $base-font-family: "Helvetica Neue", sans-serif;
 $base-font-size: 16px;
-$base-line-height: 1.25em;
+$base-line-height: 1.5em;
 $header-font-family: "oceania", sans-serif;
 
 // Colors
 $color-main: #1b5d9e;
 $color-accent: #eae848;
 $color-text: #2d2f31;
-$color-light: #616153;
+$color-footer-background: #262728;
+$color-light: #8c8c88;
 
 // Navigation and header
 $nav-text-color: white;

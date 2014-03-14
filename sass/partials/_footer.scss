@@ -1,0 +1,24 @@
+#footer {
+	color: $color-light;
+	background-color: $color-footer-background;
+	width: 100%;
+	padding-top: gutter();
+	padding-bottom: gutter();
+	-webkit-font-smoothing: anti-aliased;
+	text-align: center;
+	font-size: 0.75em;
+
+	h3 {
+		color: $color-light;
+		text-transform: uppercase;
+		line-height: 2em;
+	}
+
+	p {
+		line-height: 2em;
+	}
+
+	a {
+		color: $color-light;
+	}
+}

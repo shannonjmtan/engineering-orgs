@@ -63,15 +63,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 15, ../sass/app.scss */
+/* line 1, ../sass/partials/_typography.scss */
 body {
   font: 16px "Helvetica Neue", sans-serif;
   color: #2d2f31;
 }
 
-/* line 20, ../sass/app.scss */
+/* line 6, ../sass/partials/_typography.scss */
 p {
-  line-height: 1.25em;
+  line-height: 1.5em;
+}
+
+/* line 10, ../sass/partials/_typography.scss */
+a {
+  font-weight: bold;
+  color: #1b5d9e;
+  text-decoration: none;
+}
+
+/* line 16, ../sass/partials/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 20, ../sass/partials/_typography.scss */
+h3 {
+  color: #1b5d9e;
+  font-family: "oceania", sans-serif;
+  font-size: 1.15em;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 11, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/language/susy/_box-sizing.scss */
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*
@@ -203,6 +231,7 @@ p {
   margin-right: 2.12766%;
   margin-top: 1em;
   margin-bottom: 0;
+  line-height: 1.25em;
 }
 @media (min-width: 768px) and (max-width: 960px) {
   /* line 94, ../sass/partials/_banner.scss */
@@ -226,12 +255,12 @@ p {
     float: left;
   }
 }
-/* line 112, ../sass/partials/_banner.scss */
+/* line 113, ../sass/partials/_banner.scss */
 .hero-unit .actions {
   width: 100%;
   float: left;
 }
-/* line 116, ../sass/partials/_banner.scss */
+/* line 117, ../sass/partials/_banner.scss */
 .hero-unit .button, .hero-unit .button-main {
   display: inline-block;
   border-radius: 2px;
@@ -241,7 +270,7 @@ p {
   color: #eae848;
   border: 1px solid #eae848;
 }
-/* line 125, ../sass/partials/_banner.scss */
+/* line 126, ../sass/partials/_banner.scss */
 .hero-unit .button:hover, .hero-unit .button-main:hover {
   -moz-transition: background-color 0.35s ease-in-out;
   -o-transition: background-color 0.35s ease-in-out;
@@ -250,37 +279,63 @@ p {
   background-color: rgba(244, 243, 163, 0.2);
 }
 @media (max-width: 480px) {
-  /* line 116, ../sass/partials/_banner.scss */
+  /* line 117, ../sass/partials/_banner.scss */
   .hero-unit .button, .hero-unit .button-main {
     display: block;
   }
 }
-/* line 135, ../sass/partials/_banner.scss */
+/* line 136, ../sass/partials/_banner.scss */
 .hero-unit .button-main {
   color: #1b5d9e;
   background-color: #eae848;
   font-weight: bold;
 }
-/* line 141, ../sass/partials/_banner.scss */
+/* line 142, ../sass/partials/_banner.scss */
 .hero-unit .button-main:hover {
   background-color: #f4f3a3;
   border-color: #f4f3a3;
 }
 
-/* line 148, ../sass/partials/_banner.scss */
+/* line 149, ../sass/partials/_banner.scss */
 #hero-home {
   height: 650px;
-  background-image: url("/images/banners/boat.jpg");
+  background-image: url("../images/banners/boat.jpg");
 }
-/* line 152, ../sass/partials/_banner.scss */
+/* line 153, ../sass/partials/_banner.scss */
 #hero-home .inner {
   margin-top: 180px;
 }
 @media (max-width: 480px) {
-  /* line 152, ../sass/partials/_banner.scss */
+  /* line 153, ../sass/partials/_banner.scss */
   #hero-home .inner {
     margin-top: 100px;
   }
+}
+
+/* line 1, ../sass/partials/_footer.scss */
+#footer {
+  color: #8c8c88;
+  background-color: #262728;
+  width: 100%;
+  padding-top: 2.12766%;
+  padding-bottom: 2.12766%;
+  -webkit-font-smoothing: anti-aliased;
+  text-align: center;
+  font-size: 0.75em;
+}
+/* line 11, ../sass/partials/_footer.scss */
+#footer h3 {
+  color: #8c8c88;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+/* line 17, ../sass/partials/_footer.scss */
+#footer p {
+  line-height: 2em;
+}
+/* line 21, ../sass/partials/_footer.scss */
+#footer a {
+  color: #8c8c88;
 }
 
 /*
@@ -399,16 +454,11 @@ p {
 /* line 40, ../sass/partials/_blurbs.scss */
 #blurbs article h3 {
   margin-left: 50px;
-  padding-left: 1.06383%;
-  color: #1b5d9e;
-  font-family: "oceania", sans-serif;
-  font-size: 1.15em;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
+  padding-left: 5px;
 }
-/* line 50, ../sass/partials/_blurbs.scss */
+/* line 45, ../sass/partials/_blurbs.scss */
 #blurbs article p {
   margin-top: 0.5em;
   margin-left: 50px;
-  padding-left: 1.06383%;
+  padding-left: 5px;
 }
