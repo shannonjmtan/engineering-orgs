@@ -5,15 +5,21 @@
 @import "susy";
 
 @import "partials/variables";
-@import "partials/typography";
 
 @include border-box-sizing;
 
 @mixin guttered-container() {
 	@include container;
-	padding-left: gutter();
-	padding-right: gutter();
+	padding-left: $content-padding;
+	padding-right: $content-padding;
 }
+
+@mixin header-font() {
+	font-family: $header-font-family;
+	-webkit-font-smoothing: antialiased;
+}
+
+@import "partials/typography";
 
 @import "partials/banner";
 @import "partials/footer";

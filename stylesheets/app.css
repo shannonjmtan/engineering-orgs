@@ -63,6 +63,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* line 11, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/language/susy/_box-sizing.scss */
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* line 1, ../sass/partials/_typography.scss */
 body {
   font: 16px "Helvetica Neue", sans-serif;
@@ -88,18 +95,11 @@ strong {
 
 /* line 20, ../sass/partials/_typography.scss */
 h3 {
-  color: #1b5d9e;
   font-family: "oceania", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1b5d9e;
   font-size: 1.15em;
   font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* line 11, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/language/susy/_box-sizing.scss */
-*, *::before, *::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /*
@@ -123,14 +123,15 @@ h3 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2.12766%;
-  padding-right: 2.12766%;
+  padding-left: 10px;
+  padding-right: 10px;
   overflow: hidden;
   *zoom: 1;
+  font-family: "oceania", sans-serif;
+  -webkit-font-smoothing: antialiased;
   position: relative;
   line-height: 60px;
   vertical-align: center;
-  font-family: "oceania", sans-serif;
   font-size: 18px;
 }
 /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/output/support/_clearfix.scss */
@@ -171,30 +172,33 @@ h3 {
   margin: 0 0.4em;
   font-size: 0.9em;
 }
+/* line 54, ../sass/partials/_banner.scss */
+#toolbar nav li a {
+  font-weight: normal;
+}
 @media (max-width: 480px) {
   /* line 49, ../sass/partials/_banner.scss */
   #toolbar nav li {
     display: none;
   }
 }
-/* line 59, ../sass/partials/_banner.scss */
+/* line 63, ../sass/partials/_banner.scss */
 #toolbar nav .nav-opener {
   display: none;
   position: absolute;
   top: 0;
-  right: 2.12766%;
+  right: 10px;
   font-size: 2em;
 }
 @media (max-width: 480px) {
-  /* line 59, ../sass/partials/_banner.scss */
+  /* line 63, ../sass/partials/_banner.scss */
   #toolbar nav .nav-opener {
     display: inline;
   }
 }
 
-/* line 73, ../sass/partials/_banner.scss */
+/* line 77, ../sass/partials/_banner.scss */
 .hero-unit {
-  height: 280px;
   box-sizing: border-box;
   padding-top: 60px;
   background-color: #1b5d9e;
@@ -203,13 +207,15 @@ h3 {
   color: #eae848;
   font-size: 18px;
 }
-/* line 83, ../sass/partials/_banner.scss */
+/* line 87, ../sass/partials/_banner.scss */
 .hero-unit .inner {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2.12766%;
-  padding-right: 2.12766%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/output/support/_clearfix.scss */
 .hero-unit .inner::after {
@@ -217,14 +223,20 @@ h3 {
   display: block;
   clear: both;
 }
-/* line 87, ../sass/partials/_banner.scss */
+/* line 93, ../sass/partials/_banner.scss */
 .hero-unit h2 {
   font-family: "oceania", sans-serif;
   font-size: 2.5em;
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
 }
-/* line 94, ../sass/partials/_banner.scss */
+@media (max-width: 480px) {
+  /* line 93, ../sass/partials/_banner.scss */
+  .hero-unit h2 {
+    font-size: 2em;
+  }
+}
+/* line 104, ../sass/partials/_banner.scss */
 .hero-unit p {
   width: 48.93617%;
   float: left;
@@ -234,7 +246,7 @@ h3 {
   line-height: 1.25em;
 }
 @media (min-width: 768px) and (max-width: 960px) {
-  /* line 94, ../sass/partials/_banner.scss */
+  /* line 104, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 74.46809%;
     float: left;
@@ -242,25 +254,25 @@ h3 {
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  /* line 94, ../sass/partials/_banner.scss */
+  /* line 104, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
 @media (max-width: 480px) {
-  /* line 94, ../sass/partials/_banner.scss */
+  /* line 104, ../sass/partials/_banner.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
-/* line 113, ../sass/partials/_banner.scss */
+/* line 123, ../sass/partials/_banner.scss */
 .hero-unit .actions {
   width: 100%;
   float: left;
 }
-/* line 117, ../sass/partials/_banner.scss */
+/* line 127, ../sass/partials/_banner.scss */
 .hero-unit .button, .hero-unit .button-main {
   display: inline-block;
   border-radius: 2px;
@@ -270,7 +282,7 @@ h3 {
   color: #eae848;
   border: 1px solid #eae848;
 }
-/* line 126, ../sass/partials/_banner.scss */
+/* line 136, ../sass/partials/_banner.scss */
 .hero-unit .button:hover, .hero-unit .button-main:hover {
   -moz-transition: background-color 0.35s ease-in-out;
   -o-transition: background-color 0.35s ease-in-out;
@@ -279,37 +291,42 @@ h3 {
   background-color: rgba(244, 243, 163, 0.2);
 }
 @media (max-width: 480px) {
-  /* line 117, ../sass/partials/_banner.scss */
+  /* line 127, ../sass/partials/_banner.scss */
   .hero-unit .button, .hero-unit .button-main {
     display: block;
   }
 }
-/* line 136, ../sass/partials/_banner.scss */
+/* line 146, ../sass/partials/_banner.scss */
 .hero-unit .button-main {
   color: #1b5d9e;
   background-color: #eae848;
   font-weight: bold;
 }
-/* line 142, ../sass/partials/_banner.scss */
+/* line 152, ../sass/partials/_banner.scss */
 .hero-unit .button-main:hover {
   background-color: #f4f3a3;
   border-color: #f4f3a3;
 }
 
-/* line 149, ../sass/partials/_banner.scss */
+/* line 159, ../sass/partials/_banner.scss */
 #hero-home {
-  height: 650px;
   background-image: url("../images/banners/boat.jpg");
 }
-/* line 153, ../sass/partials/_banner.scss */
+/* line 163, ../sass/partials/_banner.scss */
 #hero-home .inner {
-  margin-top: 180px;
+  padding-top: 180px;
+  padding-bottom: 180px;
 }
 @media (max-width: 480px) {
-  /* line 153, ../sass/partials/_banner.scss */
+  /* line 163, ../sass/partials/_banner.scss */
   #hero-home .inner {
-    margin-top: 100px;
+    padding-top: 100px;
   }
+}
+
+/* line 173, ../sass/partials/_banner.scss */
+#hero-list {
+  background-image: url("../images/banners/aiaa.jpg");
 }
 
 /* line 1, ../sass/partials/_footer.scss */
@@ -348,8 +365,8 @@ h3 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2.12766%;
-  padding-right: 2.12766%;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-top: 2.12766%;
   margin-bottom: 2.12766%;
 }

@@ -18,9 +18,8 @@ strong {
 }
 
 h3 {
+	@include header-font;
 	color: $color-main;
-	font-family: $header-font-family;
 	font-size: 1.15em;
 	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
 }
