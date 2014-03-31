@@ -7,6 +7,7 @@
 	<title>UCLA Engineering Organizations</title>
 	<link rel="stylesheet" href="stylesheets/ionicons.min.css">
 	<link rel="stylesheet" href="stylesheets/fonts/oceania/oceania.css">
+	<link href='http://fonts.googleapis.com/css?family=Syncopate|Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="stylesheets/app.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
 		<ul id="nav-links">
 			<li><a href="about.html">About</a></li>
 			<li><a href="events.html">Events Calendar</a></li>
-			<li><a href="list.html">List of Groups</a></li>
+			<li class="active"><a href="list.html">List of Groups</a></li>
 		</ul>
 		<a href="#" class="nav-opener"><i class="icon ion-navicon"></i></a>
 	</nav>
@@ -25,62 +26,44 @@
 
 <section id="hero-list" class="hero-unit">
 	<div class="inner">
-		<h2>List of Groups</h2>
+		<h2>Take your pick</h2>
 		<p>
 			Every engineering student organization across disciplines and activies.
 		</p> 
 	</div>
 </section>
 
-<section id="blurbs">
+<section id="list">
 
-	<article>
-		<i class="icon ion-person-stalker"></i>
-		<h3>Free tutoring</h3>
-		<p>
-			Tau Beta Pi, Eta Kappa Nu, and Upsilon Pi Epsilon, provide free drop-in tutoring. The School of Engineering also provides additional tutoring at night.
-		</p>
-	</article>
+	<nav class="filters">
+		<section>
+			<h3>Filter by Major</h3>
+			<ul>
+				<li><a href="#" class="active">All</a></li>
+				<li><a href="#">Aerospace / Mechanical</a></li>
+				<li><a href="#">Biological</a></li>
+				<li><a href="#">Chemical</a></li>
+				<li><a href="#">Civil / Environmental</a></li>
+				<li><a href="#">Computer Science</a></li>
+				<li><a href="#">Computer Science &amp; Engr</a></li>
+				<li><a href="#">Electrical</a></li>
+				<li><a href="#">Materials</a></li>
+			</ul>
+		</section>
 
-	<article>
-		<i class="icon ion-medkit"></i>
-		<h3>S.A. Counseling</h3>
-		<p>
-			If you have any questions for the counselors, please visit this site to find out more information and to contact them for an appointment.
-		</p>
-	</article>
-
-	<article>
-		<i class="icon ion-chatbubble-working"></i>
-		<h3>Questions?</h3>
-		<p>
-			Contact any of the Presidents via emails listed on their profiles with any questions about their club. General questions can go to Shannon Tan.
-		</p>
-	</article>
-
-	<article>
-		<i class="icon ion-calendar"></i>
-		<h3>Free tutoring</h3>
-		<p>
-			Tau Beta Pi, Eta Kappa Nu, and Upsilon Pi Epsilon, provide free drop-in tutoring. The School of Engineering also provides additional tutoring at night.
-		</p>
-	</article>
-
-	<article>
-		<i class="icon ion-pizza"></i>
-		<h3>Free tutoring</h3>
-		<p>
-			Tau Beta Pi, Eta Kappa Nu, and Upsilon Pi Epsilon, provide free drop-in tutoring. The School of Engineering also provides additional tutoring at night.
-		</p>
-	</article>
-
-	<article>
-		<i class="icon ion-umbrella"></i>
-		<h3>Free tutoring</h3>
-		<p>
-			Tau Beta Pi, Eta Kappa Nu, and Upsilon Pi Epsilon, provide free drop-in tutoring. The School of Engineering also provides additional tutoring at night.
-		</p>
-	</article>
+		<section>
+			<h3>Filter by Type</h3>
+			<ul>
+				<li><a href="#" class="active">All</a></li>
+				<li><a href="#">Honor Society</a></li>
+				<li><a href="#">Project</a></li>
+				<li><a href="#">Professional</a></li>
+				<li><a href="#">Social</a></li>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">Greek</a></li>
+			</ul>
+		</section>
+	</nav>
 
 </section>
 

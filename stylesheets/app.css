@@ -70,32 +70,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
-/* line 1, ../sass/partials/_typography.scss */
+/* line 6, ../sass/partials/_typography.scss */
 body {
   font: 16px "Helvetica Neue", sans-serif;
   color: #2d2f31;
-}
-
-/* line 6, ../sass/partials/_typography.scss */
-p {
   line-height: 1.5em;
 }
 
-/* line 10, ../sass/partials/_typography.scss */
+/* line 12, ../sass/partials/_typography.scss */
 a {
-  font-weight: bold;
   color: #1b5d9e;
   text-decoration: none;
 }
 
-/* line 16, ../sass/partials/_typography.scss */
+/* line 17, ../sass/partials/_typography.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 20, ../sass/partials/_typography.scss */
+/* line 21, ../sass/partials/_typography.scss */
 h3 {
-  font-family: "oceania", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #1b5d9e;
   font-size: 1.15em;
@@ -103,22 +98,21 @@ h3 {
 }
 
 /*
- * _banner.scss
- * Contains the styles for the hero unit banner as well as the navigation,
- * since the navigation lives inside the banner most of the time
+ * _toolbar.scss
+ * The styles for the navigation bar on top
  */
-/* line 7, ../sass/partials/_banner.scss */
+/* line 6, ../sass/partials/_toolbar.scss */
 #toolbar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
   overflow: hidden;
+  height: 60px;
   z-index: 10;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 17, ../sass/partials/_banner.scss */
+/* line 16, ../sass/partials/_toolbar.scss */
 #toolbar nav {
   max-width: 1200px;
   margin-left: auto;
@@ -127,10 +121,11 @@ h3 {
   padding-right: 10px;
   overflow: hidden;
   *zoom: 1;
-  font-family: "oceania", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   position: relative;
   line-height: 60px;
+  height: 60px;
   vertical-align: center;
   font-size: 18px;
 }
@@ -140,14 +135,14 @@ h3 {
   display: block;
   clear: both;
 }
-/* line 26, ../sass/partials/_banner.scss */
+/* line 26, ../sass/partials/_toolbar.scss */
 #toolbar nav a {
   color: white;
   letter-spacing: 2px;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 32, ../sass/partials/_banner.scss */
+/* line 32, ../sass/partials/_toolbar.scss */
 #toolbar nav a:hover {
   -moz-transition: color 0.35s ease-in-out;
   -o-transition: color 0.35s ease-in-out;
@@ -155,34 +150,39 @@ h3 {
   transition: color 0.35s ease-in-out;
   color: #eae848;
 }
-/* line 38, ../sass/partials/_banner.scss */
+/* line 38, ../sass/partials/_toolbar.scss */
 #toolbar nav h1 {
   margin-right: 1em;
   display: block;
   float: left;
-  font-weight: bold;
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.15em;
 }
-/* line 45, ../sass/partials/_banner.scss */
+/* line 46, ../sass/partials/_toolbar.scss */
 #toolbar nav ul {
-  display: inline;
+  font-size: 0.9em;
+  text-align: right;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: center;
 }
-/* line 49, ../sass/partials/_banner.scss */
+/* line 54, ../sass/partials/_toolbar.scss */
 #toolbar nav li {
   display: inline;
   margin: 0 0.4em;
-  font-size: 0.9em;
 }
-/* line 54, ../sass/partials/_banner.scss */
-#toolbar nav li a {
-  font-weight: normal;
+/* line 58, ../sass/partials/_toolbar.scss */
+#toolbar nav li.active a {
+  color: #eae848;
+  border-bottom: 1px solid #eae848;
 }
 @media (max-width: 480px) {
-  /* line 49, ../sass/partials/_banner.scss */
+  /* line 54, ../sass/partials/_toolbar.scss */
   #toolbar nav li {
     display: none;
   }
 }
-/* line 63, ../sass/partials/_banner.scss */
+/* line 68, ../sass/partials/_toolbar.scss */
 #toolbar nav .nav-opener {
   display: none;
   position: absolute;
@@ -191,13 +191,17 @@ h3 {
   font-size: 2em;
 }
 @media (max-width: 480px) {
-  /* line 63, ../sass/partials/_banner.scss */
+  /* line 68, ../sass/partials/_toolbar.scss */
   #toolbar nav .nav-opener {
     display: inline;
   }
 }
 
-/* line 77, ../sass/partials/_banner.scss */
+/*
+ * _banner.scss
+ * Contains the styles for the hero unit banner
+ */
+/* line 6, ../sass/partials/_hero-unit.scss */
 .hero-unit {
   box-sizing: border-box;
   padding-top: 60px;
@@ -206,8 +210,9 @@ h3 {
   background-size: cover;
   color: #eae848;
   font-size: 18px;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 87, ../sass/partials/_banner.scss */
+/* line 17, ../sass/partials/_hero-unit.scss */
 .hero-unit .inner {
   max-width: 1200px;
   margin-left: auto;
@@ -223,30 +228,29 @@ h3 {
   display: block;
   clear: both;
 }
-/* line 93, ../sass/partials/_banner.scss */
+/* line 23, ../sass/partials/_hero-unit.scss */
 .hero-unit h2 {
-  font-family: "oceania", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 2.5em;
-  font-weight: 100;
-  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 @media (max-width: 480px) {
-  /* line 93, ../sass/partials/_banner.scss */
+  /* line 23, ../sass/partials/_hero-unit.scss */
   .hero-unit h2 {
     font-size: 2em;
   }
 }
-/* line 104, ../sass/partials/_banner.scss */
+/* line 34, ../sass/partials/_hero-unit.scss */
 .hero-unit p {
   width: 48.93617%;
   float: left;
   margin-right: 2.12766%;
   margin-top: 1em;
   margin-bottom: 0;
-  line-height: 1.25em;
 }
 @media (min-width: 768px) and (max-width: 960px) {
-  /* line 104, ../sass/partials/_banner.scss */
+  /* line 34, ../sass/partials/_hero-unit.scss */
   .hero-unit p {
     width: 74.46809%;
     float: left;
@@ -254,25 +258,25 @@ h3 {
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  /* line 104, ../sass/partials/_banner.scss */
+  /* line 34, ../sass/partials/_hero-unit.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
 @media (max-width: 480px) {
-  /* line 104, ../sass/partials/_banner.scss */
+  /* line 34, ../sass/partials/_hero-unit.scss */
   .hero-unit p {
     width: 100%;
     float: left;
   }
 }
-/* line 123, ../sass/partials/_banner.scss */
+/* line 52, ../sass/partials/_hero-unit.scss */
 .hero-unit .actions {
   width: 100%;
   float: left;
 }
-/* line 127, ../sass/partials/_banner.scss */
+/* line 56, ../sass/partials/_hero-unit.scss */
 .hero-unit .button, .hero-unit .button-main {
   display: inline-block;
   border-radius: 2px;
@@ -282,7 +286,7 @@ h3 {
   color: #eae848;
   border: 1px solid #eae848;
 }
-/* line 136, ../sass/partials/_banner.scss */
+/* line 65, ../sass/partials/_hero-unit.scss */
 .hero-unit .button:hover, .hero-unit .button-main:hover {
   -moz-transition: background-color 0.35s ease-in-out;
   -o-transition: background-color 0.35s ease-in-out;
@@ -291,40 +295,40 @@ h3 {
   background-color: rgba(244, 243, 163, 0.2);
 }
 @media (max-width: 480px) {
-  /* line 127, ../sass/partials/_banner.scss */
+  /* line 56, ../sass/partials/_hero-unit.scss */
   .hero-unit .button, .hero-unit .button-main {
     display: block;
   }
 }
-/* line 146, ../sass/partials/_banner.scss */
+/* line 75, ../sass/partials/_hero-unit.scss */
 .hero-unit .button-main {
   color: #1b5d9e;
   background-color: #eae848;
   font-weight: bold;
 }
-/* line 152, ../sass/partials/_banner.scss */
+/* line 81, ../sass/partials/_hero-unit.scss */
 .hero-unit .button-main:hover {
   background-color: #f4f3a3;
   border-color: #f4f3a3;
 }
 
-/* line 159, ../sass/partials/_banner.scss */
+/* line 88, ../sass/partials/_hero-unit.scss */
 #hero-home {
   background-image: url("../images/banners/boat.jpg");
 }
-/* line 163, ../sass/partials/_banner.scss */
+/* line 92, ../sass/partials/_hero-unit.scss */
 #hero-home .inner {
   padding-top: 180px;
   padding-bottom: 180px;
 }
 @media (max-width: 480px) {
-  /* line 163, ../sass/partials/_banner.scss */
+  /* line 92, ../sass/partials/_hero-unit.scss */
   #hero-home .inner {
     padding-top: 100px;
   }
 }
 
-/* line 173, ../sass/partials/_banner.scss */
+/* line 102, ../sass/partials/_hero-unit.scss */
 #hero-list {
   background-image: url("../images/banners/aiaa.jpg");
 }
@@ -367,8 +371,8 @@ h3 {
   margin-right: auto;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 2.12766%;
-  margin-bottom: 2.12766%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 /* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/output/support/_clearfix.scss */
 #blurbs::after {
@@ -376,13 +380,13 @@ h3 {
   display: block;
   clear: both;
 }
-/* line 12, ../sass/partials/_blurbs.scss */
+/* line 10, ../sass/partials/_blurbs.scss */
 #blurbs article {
   margin-top: 2.12766%;
   margin-bottom: 2.12766%;
 }
 @media (min-width: 960px) {
-  /* line 12, ../sass/partials/_blurbs.scss */
+  /* line 10, ../sass/partials/_blurbs.scss */
   #blurbs article {
     width: 31.91489%;
     float: left;
@@ -408,7 +412,7 @@ h3 {
   }
 }
 @media (min-width: 768px) and (max-width: 960px) {
-  /* line 12, ../sass/partials/_blurbs.scss */
+  /* line 10, ../sass/partials/_blurbs.scss */
   #blurbs article {
     width: 31.91489%;
     float: left;
@@ -434,7 +438,7 @@ h3 {
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
-  /* line 12, ../sass/partials/_blurbs.scss */
+  /* line 10, ../sass/partials/_blurbs.scss */
   #blurbs article {
     width: 48.93617%;
     float: left;
@@ -454,13 +458,13 @@ h3 {
   }
 }
 @media (max-width: 480px) {
-  /* line 12, ../sass/partials/_blurbs.scss */
+  /* line 10, ../sass/partials/_blurbs.scss */
   #blurbs article {
     width: 100%;
     float: left;
   }
 }
-/* line 32, ../sass/partials/_blurbs.scss */
+/* line 30, ../sass/partials/_blurbs.scss */
 #blurbs article .icon {
   width: 50px;
   float: left;
@@ -468,14 +472,64 @@ h3 {
   font-size: 3em;
   text-align: center;
 }
-/* line 40, ../sass/partials/_blurbs.scss */
+/* line 38, ../sass/partials/_blurbs.scss */
 #blurbs article h3 {
   margin-left: 50px;
   padding-left: 5px;
 }
-/* line 45, ../sass/partials/_blurbs.scss */
+/* line 43, ../sass/partials/_blurbs.scss */
 #blurbs article p {
   margin-top: 0.5em;
   margin-left: 50px;
   padding-left: 5px;
+}
+
+/* line 1, ../sass/partials/_list.scss */
+#list {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+/* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.0.0.rc.2/sass/susy/output/support/_clearfix.scss */
+#list::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 4, ../sass/partials/_list.scss */
+#list .filters {
+  width: 23.40426%;
+  float: left;
+  margin-right: 2.12766%;
+}
+
+/* line 11, ../sass/partials/_list.scss */
+.filters section h3 {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #8c8c88;
+  letter-spacing: 0.1em;
+}
+/* line 18, ../sass/partials/_list.scss */
+.filters section ul {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+/* line 24, ../sass/partials/_list.scss */
+.filters section ul li a {
+  font-weight: normal;
+  color: #2d2f31;
+}
+/* line 28, ../sass/partials/_list.scss */
+.filters section ul li a:hover {
+  color: #1b5d9e;
+}
+/* line 32, ../sass/partials/_list.scss */
+.filters section ul li a.active {
+  font-weight: bold;
+  color: #1b5d9e;
 }

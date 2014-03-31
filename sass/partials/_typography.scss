@@ -1,14 +1,15 @@
+@mixin header-font() {
+	font-family: $header-font-family;
+	-webkit-font-smoothing: antialiased;
+}
+
 body {
 	font: $base-font-size $base-font-family;
 	color: $color-text;
-}
-
-p {
 	line-height: $base-line-height;
 }
 
 a {
-	font-weight: bold;
 	color: $color-main;
 	text-decoration: none;
 }

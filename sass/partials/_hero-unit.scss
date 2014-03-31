@@ -1,78 +1,7 @@
 /*
  * _banner.scss
- * Contains the styles for the hero unit banner as well as the navigation,
- * since the navigation lives inside the banner most of the time
+ * Contains the styles for the hero unit banner
  */
-
-#toolbar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: $nav-height;
-	overflow: hidden;
-	z-index: 10;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-	nav {
-		@include guttered-container;
-		@include clearfix;
-		@include header-font;
-		position: relative;
-		line-height: $nav-height;
-		vertical-align: center;
-		font-size: $header-font-size;
-
-		a {
-			color: $nav-text-color;
-			letter-spacing: 2px;
-			text-decoration: none;
-			text-transform: uppercase;
-
-			&:hover {
-				@include transition(color 0.35s ease-in-out);
-				color: $nav-text-hover-color;
-			}
-		}
-
-		h1 {
-			margin-right: 1em;
-			display: block;
-			float: left;
-			font-weight: bold;
-		}
-
-		ul {
-			display: inline;
-		}
-
-		li {
-			display: inline;
-			margin: 0 0.4em;
-			font-size: 0.9em;	
-
-			a {
-				font-weight: normal;
-			}
-
-			@include breakpoint($mobile) {
-				display: none;
-			}
-		}
-
-		.nav-opener {
-			display: none;  // Display only on mobile
-			position: absolute;
-			top: 0;
-			right: $content-padding;
-			font-size: 2em;
-
-			@include breakpoint($mobile) {
-				display: inline;
-			}
-		}
-	}
-}
 
 .hero-unit {
 	//height: $header-height;
@@ -83,6 +12,7 @@
 	background-size: cover;
 	color: $color-accent;
 	font-size: $header-font-size;
+	-webkit-font-smoothing: antialiased;
 
 	.inner {
 		@include guttered-container;
@@ -93,8 +23,8 @@
 	h2 {
 		font-family: $header-font-family;
 		font-size: 2.5em;
-		font-weight: 100;
-		-webkit-font-smoothing: antialiased;
+		font-weight: 300;
+		letter-spacing: 0.02em;
 
 		@include breakpoint($mobile) {
 			font-size: 2em;
@@ -105,7 +35,6 @@
 		@include span(6);
 		margin-top: 1em;
 		margin-bottom: 0;
-		line-height: 1.25em;
 
 		@include breakpoint($small-desktop) {
 			@include span(9);

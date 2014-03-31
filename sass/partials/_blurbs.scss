@@ -5,9 +5,7 @@
  */
 
 #blurbs {
-	@include guttered-container;
-	margin-top: gutter();
-	margin-bottom: gutter();
+	@include padded-container;
 
 	article {
 		margin-top: gutter();
