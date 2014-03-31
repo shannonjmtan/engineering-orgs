@@ -20,10 +20,6 @@
 	padding-bottom: 50px;
 }
 
-@mixin header-font() {
-	font-family: $header-font-family;
-	-webkit-font-smoothing: antialiased;
-}
 
 @import "partials/typography";
 

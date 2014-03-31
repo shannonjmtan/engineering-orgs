@@ -73,7 +73,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 6, ../sass/partials/_typography.scss */
 body {
   font: 16px "Helvetica Neue", sans-serif;
-  color: #2d2f31;
+  color: #414447;
   line-height: 1.5em;
 }
 
@@ -509,7 +509,7 @@ h3 {
 
 /* line 11, ../sass/partials/_list.scss */
 .filters section h3 {
-  font-size: 0.8em;
+  font-size: 0.85em;
   text-transform: uppercase;
   color: #8c8c88;
   letter-spacing: 0.1em;
@@ -522,7 +522,7 @@ h3 {
 /* line 24, ../sass/partials/_list.scss */
 .filters section ul li a {
   font-weight: normal;
-  color: #2d2f31;
+  color: #414447;
 }
 /* line 28, ../sass/partials/_list.scss */
 .filters section ul li a:hover {
