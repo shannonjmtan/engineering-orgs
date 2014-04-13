@@ -1,0 +1,23 @@
+<nav class="navbar engr-navbar engr-navbar-absolute-top" role="navigation">
+  <div class="container">
+    <!-- Brand and mobile-only navbar collapse toggle -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">UCLA Engr Orgs</a>
+    </div>
+
+    <!-- Navbar contents -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="<% if params[:action] == 'about'%>active<% end %>"><%= link_to 'About', about_path%></li>
+        <li class="<% if params[:action] == 'calendar'%>active<% end %>"><%= link_to 'Events Calendar', calendar_path %></li>
+        <li class="<% if params[:action] == 'list'%>active<% end %>"><%= link_to 'List of Groups', list_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

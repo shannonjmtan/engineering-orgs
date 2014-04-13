@@ -1,0 +1,43 @@
+<div class="engr-jumbotron engr-jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Login</h1>
+        <p>
+          To edit content, please login.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @club.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @club.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @club.website %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @club.description %>
+</p>
+
+<p>
+  <strong>Joining:</strong>
+  <%= @club.joining %>
+</p>
+
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

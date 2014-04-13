@@ -1,0 +1,32 @@
+<div class="engr-jumbotron engr-jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Login</h1>
+        <p>
+          To edit content, please login.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Site admin:</strong>
+  <%= @user.site_admin %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
