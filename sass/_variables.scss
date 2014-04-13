@@ -4,6 +4,9 @@
 // in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
 //$bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")'));
 //
+
+$header-font-family: "Roboto Condensed", sans-serif;
+
 // Variables
 // --------------------------------------------------
 
@@ -17,7 +20,8 @@
 //$gray-light:             lighten(#000, 60%);   // #999
 //$gray-lighter:           lighten(#000, 93.5%); // #eee
 
-//$brand-primary:         #428bca;
+$brand-primary:         #1b5d9e;
+$brand-secondary:       #eae848;
 //$brand-success:         #5cb85c;
 //$brand-info:            #5bc0de;
 //$brand-warning:         #f0ad4e;
