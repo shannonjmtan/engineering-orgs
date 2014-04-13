@@ -1,68 +1,3 @@
-/* line 5, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-/* line 22, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.1.1.0/vendor/assets/stylesheets/bootstrap/_normalize.scss */
 html {
@@ -4860,7 +4795,7 @@ input[type="button"].btn-block {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 5px 10px;
 }
 /* line 23, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.1.1.0/vendor/assets/stylesheets/bootstrap/_navs.scss */
 .nav > li > a:hover, .nav > li > a:focus {
@@ -7728,31 +7663,31 @@ button.close {
 /* line 15, ../sass/_jumbotron.scss */
 .engr-jumbotron h1 {
   font-family: "Roboto Condensed", sans-serif;
-  font-weight: 300;
+  font-weight: lighter;
 }
-/* line 21, ../sass/_jumbotron.scss */
+/* line 20, ../sass/_jumbotron.scss */
 .engr-jumbotron .btn-lg, .engr-jumbotron .btn-group-lg > .btn {
   font-size: 21px;
 }
-/* line 25, ../sass/_jumbotron.scss */
+/* line 24, ../sass/_jumbotron.scss */
 .engr-jumbotron .engr-btn-header {
   color: #1b5d9e;
   background-color: #eae848;
   border-color: #eae848;
 }
-/* line 31, ../sass/_jumbotron.scss */
+/* line 30, ../sass/_jumbotron.scss */
 .engr-jumbotron .engr-btn-header-outline {
   color: #eae848;
   background-color: transparent;
   border-color: #eae848;
 }
 
-/* line 38, ../sass/_jumbotron.scss */
+/* line 37, ../sass/_jumbotron.scss */
 .engr-jumbotron-list {
   background-image: url("../images/banners/baja.jpg");
 }
 
-/* line 42, ../sass/_jumbotron.scss */
+/* line 41, ../sass/_jumbotron.scss */
 .engr-jumbotron-home {
   padding-top: 200px;
   padding-bottom: 150px;
@@ -7769,13 +7704,14 @@ button.close {
 
 /* line 1, ../sass/_blurbs.scss */
 .engr-blurbs {
+  padding-top: 30px;
   text-align: center;
 }
-/* line 4, ../sass/_blurbs.scss */
+/* line 5, ../sass/_blurbs.scss */
 .engr-blurbs p {
   text-align: left;
 }
-/* line 8, ../sass/_blurbs.scss */
+/* line 9, ../sass/_blurbs.scss */
 .engr-blurbs .engr-blurbs-icon {
   background-color: #1b5d9e;
   border-radius: 100px;
@@ -7784,7 +7720,12 @@ button.close {
   color: white;
   text-shadow: #144372 2px 2px;
 }
-/* line 18, ../sass/_blurbs.scss */
+/* line 19, ../sass/_blurbs.scss */
 .engr-blurbs .engr-blurb {
   margin-bottom: 30px;
+}
+
+/* line 2, ../sass/_group-list.scss */
+.engr-group-list .engr-group-list-filter {
+  margin-bottom: 20px;
 }
