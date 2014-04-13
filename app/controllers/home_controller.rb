@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def home; end
 
   def list
-    @clubs = Club.all
+    @clubs = Club.all.order(:name)
   end
 
   def about; end

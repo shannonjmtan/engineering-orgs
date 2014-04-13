@@ -14,8 +14,8 @@ class Club < ActiveRecord::Base
   validates :name, :presence => true, length: { maximum: 255 }
   validates :president, :presence => true, length: { maximum: 255 }
   validates :year, length: { maximum: 255 }
-  validates :email, :presence => true, length: { maximum: 255 }
-  validates :website, :presence => true, length: { maximum: 255 }
+  validates :email, length: { maximum: 255 }
+  validates :website, length: { maximum: 255 }
   validates :description, :presence => true
   validates :joining, :presence => true
 
