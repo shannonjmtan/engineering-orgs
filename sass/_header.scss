@@ -1,9 +1,12 @@
-.engr-header {
-	$engr-header-padding: 4 * $grid-gutter-width;
-	$engr-header-font-multiplier: 1.5;
+// TODO: move these out of this file
+$engr-header-padding-base: 2 * $grid-gutter-width;
+$engr-header-padding-large: 2 * $engr-header-padding-base;
+$engr-header-font-multiplier: 1.5;
 
-	padding-top: $navbar-height + $engr-header-padding;
-	padding-bottom: $engr-header-padding;
+.engr-header {
+	// Account for the navbar which is absolutely positioned
+	padding-top: $navbar-height + $engr-header-padding-base;
+	padding-bottom: $engr-header-padding-base;
 	margin-bottom: $grid-gutter-width;
 
 	background-color: $brand-primary;
@@ -39,9 +42,14 @@
 		background-color: transparent;
 		border-color: $brand-secondary;
 	}
+}
 
+.engr-header-list {
+	background-image: url('../images/banners/baja.jpg');
 }
 
 .engr-header-home {
+	padding-top: $navbar-height + $engr-header-padding-large;
+	padding-bottom: $engr-header-padding-large;
 	background-image: url('../images/banners/boat.jpg');
 }

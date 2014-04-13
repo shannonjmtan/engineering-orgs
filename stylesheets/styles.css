@@ -7715,10 +7715,10 @@ button.close {
   background-color: white;
 }
 
-/* line 1, ../sass/_header.scss */
+/* line 6, ../sass/_header.scss */
 .engr-header {
-  padding-top: 170px;
-  padding-bottom: 120px;
+  padding-top: 110px;
+  padding-bottom: 60px;
   margin-bottom: 30px;
   background-color: #1b5d9e;
   background-position: center;
@@ -7726,35 +7726,42 @@ button.close {
   color: #eae848;
   -webkit-font-smoothing: antialiased;
 }
-/* line 17, ../sass/_header.scss */
+/* line 20, ../sass/_header.scss */
 .engr-header h2 {
   font-size: 45px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: lighter;
 }
-/* line 23, ../sass/_header.scss */
+/* line 26, ../sass/_header.scss */
 .engr-header p {
   font-size: 21px;
 }
-/* line 27, ../sass/_header.scss */
+/* line 30, ../sass/_header.scss */
 .engr-header .btn-lg, .engr-header .btn-group-lg > .btn {
   font-size: 21px;
 }
-/* line 31, ../sass/_header.scss */
+/* line 34, ../sass/_header.scss */
 .engr-header .engr-btn-header {
   color: #1b5d9e;
   background-color: #eae848;
   border-color: #eae848;
 }
-/* line 37, ../sass/_header.scss */
+/* line 40, ../sass/_header.scss */
 .engr-header .engr-btn-header-outline {
   color: #eae848;
   background-color: transparent;
   border-color: #eae848;
 }
 
-/* line 45, ../sass/_header.scss */
+/* line 47, ../sass/_header.scss */
+.engr-header-list {
+  background-image: url("../images/banners/baja.jpg");
+}
+
+/* line 51, ../sass/_header.scss */
 .engr-header-home {
+  padding-top: 170px;
+  padding-bottom: 120px;
   background-image: url("../images/banners/boat.jpg");
 }
 
@@ -7778,4 +7785,12 @@ button.close {
 /* line 18, ../sass/_blurbs.scss */
 .engr-blurbs .engr-blurb {
   margin-bottom: 30px;
+}
+
+/* line 10, ../sass/styles.scss */
+.engr-footer {
+  border-top: 1px solid #eeeeee;
+  margin: 30px 0;
+  padding-top: 30px;
+  font-size: 12px;
 }
