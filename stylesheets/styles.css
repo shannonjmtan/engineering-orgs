@@ -3272,8 +3272,8 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("/fonts/bootstrap/glyphicons-halflings-regular.eot?1397366394");
-  src: url("/fonts/bootstrap/glyphicons-halflings-regular.eot?&1397366394#iefix") format("embedded-opentype"), url("/fonts/bootstrap/glyphicons-halflings-regular.woff?1397366394") format("woff"), url("/fonts/bootstrap/glyphicons-halflings-regular.ttf?1397366394") format("truetype"), url("/fonts/bootstrap/glyphicons-halflings-regular.svg?1397366394#glyphicons_halflingsregular") format("svg");
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?1397373188");
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?&1397373188#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff?1397373188") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf?1397373188") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg?1397373188#glyphicons_halflingsregular") format("svg");
 }
 /* line 21, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.1.1.0/vendor/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
