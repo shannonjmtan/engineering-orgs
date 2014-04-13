@@ -5,6 +5,8 @@ $engr-header-padding-large: 5 * $jumbotron-padding;
 	@extend .jumbotron;
 	// Account for the navbar which is absolutely positioned
 	padding-top: $navbar-height + $jumbotron-padding;
+	padding-left: 0;
+	padding-right: 0;
 	margin-bottom: $grid-gutter-width;
 
 	background-position: center;
@@ -31,6 +33,19 @@ $engr-header-padding-large: 5 * $jumbotron-padding;
 		color: $brand-secondary;
 		background-color: transparent;
 		border-color: $brand-secondary;
+	}
+
+	.engr-jumbotron-logo {
+		text-align: center;
+		padding-top: $padding-large-vertical;
+
+		.thumbnail {
+			margin-bottom: 0;
+		}
+
+		img {
+			max-height: 150px;
+		}
 	}
 }
 
