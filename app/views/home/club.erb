@@ -14,7 +14,9 @@
       <% else %>
         <div class="col-md-12">
           <h1><%= @club.name %></h1>
-          <%= link_to 'Visit Our Website!', @club.website, :class => 'btn engr-btn-header btn' %>
+          <% if @club.website %>
+            <%= link_to 'Visit Our Website!', @club.website, :class => 'btn engr-btn-header btn' %>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -28,18 +30,24 @@
       <div class="col-md-4">
         <table class="table table-bordered">
           <tbody>
+          <% if @club.president %>
           <tr>
             <th>President</th>
             <td><%= @club.president %></td>
           </tr>
+          <% end %>
+          <% if @club.email %>
           <tr>
             <th>Contact</th>
             <td><%= @club.email %></td>
           </tr>
+          <% end %>
+          <% if @club.year %>
           <tr>
             <th>Year Founded</th>
             <td><%= @club.year %></td>
           </tr>
+          <% end %>
           <% if @club.club_types.count > 0 %>
           <tr>
             <th>Type</th>
