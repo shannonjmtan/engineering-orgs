@@ -4,7 +4,7 @@
       <% if @club.logo %>
       <div class="col-md-4 engr-jumbotron-logo">
           <div class="thumbnail">
-            <img src="<%= @club.logo %>>" class="img-responsive">
+            <%= image_tag(@club.logo, :class => 'img-responsive') %>
           </div>
       </div>
       <div class="col-md-8">
@@ -42,7 +42,7 @@
             <td><%= @club.email %></td>
           </tr>
           <% end %>
-          <% if @club.year %>
+          <% if @club.year != "" %>
           <tr>
             <th>Year Founded</th>
             <td><%= @club.year %></td>
