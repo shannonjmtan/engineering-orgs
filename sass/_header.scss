@@ -1,0 +1,47 @@
+.engr-header {
+	$engr-header-padding: 4 * $grid-gutter-width;
+	$engr-header-font-multiplier: 1.5;
+
+	padding-top: $navbar-height + $engr-header-padding;
+	padding-bottom: $engr-header-padding;
+	margin-bottom: $grid-gutter-width;
+
+	background-color: $brand-primary;
+	background-position: center;
+	background-size: cover;
+
+	color: $brand-secondary;
+
+	-webkit-font-smoothing: antialiased;
+
+	h2 {
+		font-size: $engr-header-font-multiplier * $font-size-h2;
+		font-family: $header-font-family;
+		font-weight: lighter;
+	}
+
+	p {
+		font-size: $engr-header-font-multiplier * $font-size-base;
+	}
+
+	.btn-lg {
+		font-size: $engr-header-font-multiplier * $font-size-base;
+	}
+
+	.engr-btn-header {
+		color: $brand-primary;
+		background-color: $brand-secondary;
+		border-color: $brand-secondary;
+	}
+
+	.engr-btn-header-outline {
+		color: $brand-secondary;
+		background-color: transparent;
+		border-color: $brand-secondary;
+	}
+
+}
+
+.engr-header-home {
+	background-image: url('../images/banners/boat.jpg');
+}
