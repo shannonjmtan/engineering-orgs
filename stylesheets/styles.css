@@ -7683,15 +7683,20 @@ button.close {
 }
 
 /* line 37, ../sass/_jumbotron.scss */
-.engr-jumbotron-list {
-  background-image: url("../images/banners/baja.jpg");
-}
-
-/* line 41, ../sass/_jumbotron.scss */
 .engr-jumbotron-home {
   padding-top: 200px;
   padding-bottom: 150px;
   background-image: url("../images/banners/boat.jpg");
+}
+
+/* line 43, ../sass/_jumbotron.scss */
+.engr-jumbotron-list {
+  background-image: url("../images/banners/baja.jpg");
+}
+
+/* line 47, ../sass/_jumbotron.scss */
+.engr-jumbotron-about {
+  background-image: url("../images/banners/bridge.jpg");
 }
 
 /* line 1, ../sass/_footer.scss */

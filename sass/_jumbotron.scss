@@ -34,12 +34,16 @@ $engr-header-padding-large: 5 * $jumbotron-padding;
 	}
 }
 
-.engr-jumbotron-list {
-	background-image: url('../images/banners/baja.jpg');
-}
-
 .engr-jumbotron-home {
 	padding-top: $navbar-height + $engr-header-padding-large;
 	padding-bottom: $engr-header-padding-large;
 	background-image: url('../images/banners/boat.jpg');
+}
+
+.engr-jumbotron-list {
+	background-image: url('../images/banners/baja.jpg');
+}
+
+.engr-jumbotron-about {
+	background-image: url('../images/banners/bridge.jpg');
 }
