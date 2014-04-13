@@ -7776,6 +7776,6 @@ button.close {
   text-shadow: #144372 2px 2px;
 }
 /* line 18, ../sass/_blurbs.scss */
-.engr-blurbs .row {
+.engr-blurbs .engr-blurb {
   margin-bottom: 30px;
 }
