@@ -1,34 +1,25 @@
 // TODO: move these out of this file
-$engr-header-padding-base: 2 * $grid-gutter-width;
-$engr-header-padding-large: 2 * $engr-header-padding-base;
-$engr-header-font-multiplier: 1.5;
+$engr-header-padding-large: 5 * $jumbotron-padding;
 
-.engr-header {
+.engr-jumbotron {
+	@extend .jumbotron;
 	// Account for the navbar which is absolutely positioned
-	padding-top: $navbar-height + $engr-header-padding-base;
-	padding-bottom: $engr-header-padding-base;
+	padding-top: $navbar-height + $jumbotron-padding;
 	margin-bottom: $grid-gutter-width;
 
-	background-color: $brand-primary;
 	background-position: center;
 	background-size: cover;
 
-	color: $brand-secondary;
-
 	-webkit-font-smoothing: antialiased;
 
-	h2 {
-		font-size: $engr-header-font-multiplier * $font-size-h2;
+	h1 {
+		//font-size: 2.75 * $jumbotron-font-size;
 		font-family: $header-font-family;
 		font-weight: lighter;
 	}
 
-	p {
-		font-size: $engr-header-font-multiplier * $font-size-base;
-	}
-
 	.btn-lg {
-		font-size: $engr-header-font-multiplier * $font-size-base;
+		font-size: $jumbotron-font-size;
 	}
 
 	.engr-btn-header {
@@ -44,11 +35,11 @@ $engr-header-font-multiplier: 1.5;
 	}
 }
 
-.engr-header-list {
+.engr-jumbotron-list {
 	background-image: url('../images/banners/baja.jpg');
 }
 
-.engr-header-home {
+.engr-jumbotron-home {
 	padding-top: $navbar-height + $engr-header-padding-large;
 	padding-bottom: $engr-header-padding-large;
 	background-image: url('../images/banners/boat.jpg');
