@@ -4,6 +4,8 @@ class HomeController < ApplicationController
 
   def list
     @clubs = Club.all.order(:name)
+    @club_types = ClubType.all
+    @majors = Major.all
   end
 
   def about; end

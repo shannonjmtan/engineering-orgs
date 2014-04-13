@@ -20,28 +20,18 @@
         <section class="engr-group-list-filter">
           <h5>Filter by Major</h5>
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">All</a></li>
-            <li><a href="#">Aerospace / Mechanical</a></li>
-            <li><a href="#">Biological</a></li>
-            <li><a href="#">Chemical</a></li>
-            <li><a href="#">Civil / Environmental</a></li>
-            <li><a href="#">Computer Science</a></li>
-            <li><a href="#">Computer Science &amp; Engr</a></li>
-            <li><a href="#">Electrical</a></li>
-            <li><a href="#">Materials</a></li>
+            <% @majors.each do |m| %>
+              <li><%= link_to m.name, "#", :id => m.name %></li>
+            <% end %>
           </ul>
         </section>
 
         <section class="engr-group-list-filter">
           <h5>Filter by Type</h5>
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">All</a></li>
-            <li><a href="#">Honor Society</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">Professional</a></li>
-            <li><a href="#">Social</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Greek</a></li>
+            <% @club_types.each do |t| %>
+              <li><%= link_to t.name, "#", :id => t.name %></li>
+            <% end %>
           </ul>
         </section>
       </div>
@@ -79,3 +69,32 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+  var searchtext = "";
+  var search;
+
+  $(".nav-pills > li > a").click(function(event){
+    event.preventDefault();
+    var id = $(this).attr("id");
+    var parent = $(this).parent();
+    if (!parent.hasClass("active"))
+    {
+      searchtext += ":contains('"+id+"')";
+      $(this).parent().addClass("active");
+    }
+    else
+    {
+      $(this).parent().removeClass("active");
+      var re = new RegExp(":contains\\(\\'"+id+"\\'\\)");
+      searchtext = searchtext.replace(re, "");
+    }
+
+    $(".success").removeClass("success");
+    if (searchtext != "")
+      $("tr"+searchtext).addClass("success");
+  });
+
+
+</script>
