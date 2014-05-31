@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413084720) do
+ActiveRecord::Schema.define(version: 20140531062508) do
+
+  create_table "club_majors", force: true do |t|
+    t.integer  "major_id"
+    t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "club_majors", ["club_id"], name: "index_club_majors_on_club_id"
+  add_index "club_majors", ["major_id"], name: "index_club_majors_on_major_id"
+
+  create_table "club_type_clubs", force: true do |t|
+    t.integer  "club_type_id"
+    t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "club_type_clubs", ["club_id"], name: "index_club_type_clubs_on_club_id"
+  add_index "club_type_clubs", ["club_type_id"], name: "index_club_type_clubs_on_club_type_id"
 
   create_table "club_types", force: true do |t|
     t.string   "name"
@@ -19,13 +39,15 @@ ActiveRecord::Schema.define(version: 20140413084720) do
     t.datetime "updated_at"
   end
 
-  create_table "club_types_clubs", id: false, force: true do |t|
-    t.integer "club_type_id", null: false
-    t.integer "club_id",      null: false
+  create_table "club_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "club_types_clubs", ["club_id", "club_type_id"], name: "index_club_types_clubs_on_club_id_and_club_type_id"
-  add_index "club_types_clubs", ["club_type_id", "club_id"], name: "index_club_types_clubs_on_club_type_id_and_club_id"
+  add_index "club_users", ["club_id"], name: "index_club_users_on_club_id"
+  add_index "club_users", ["user_id"], name: "index_club_users_on_user_id"
 
   create_table "clubs", force: true do |t|
     t.string   "name"
@@ -40,14 +62,6 @@ ActiveRecord::Schema.define(version: 20140413084720) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "clubs_majors", id: false, force: true do |t|
-    t.integer "club_id",  null: false
-    t.integer "major_id", null: false
-  end
-
-  add_index "clubs_majors", ["club_id", "major_id"], name: "index_clubs_majors_on_club_id_and_major_id"
-  add_index "clubs_majors", ["major_id", "club_id"], name: "index_clubs_majors_on_major_id_and_club_id"
 
   create_table "majors", force: true do |t|
     t.string   "name"

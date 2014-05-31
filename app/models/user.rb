@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   acts_as_paranoid
 
   # Model Associations
+  has_many :club_users
+  has_many :clubs, through: :club_users
 
   # Nested Attributes
 

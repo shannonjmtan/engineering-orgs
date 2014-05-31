@@ -1,7 +1,8 @@
 class ClubType < ActiveRecord::Base
 
   # Model Associations
-  has_and_belongs_to_many :clubs
+  has_many :club_type_clubs
+  has_many :clubs, through: :club_type_clubs
 
   # Nested Attributes
 

@@ -30,90 +30,6 @@ Club.create!([
   {name: "Upsilon Pi Epsilon ", president: "Preston Chan", year: "2005", email: "info@upe.seas.ucla.edu", website: "https://upe.seas.ucla.edu/", logo: "", description: "Upsilon Pi Epsilon (UPE) is the first and only existing international honor society in the Computing and Information Disciplines. The overall mission of UPE is to recognize academic excellence at both the undergraduate and graduate levels and to maximize the personal and professional growth of its members.\r\n\r\nUCLA's UPE CA Beta Chapter has been an important part of the CS community at UCLA since its refounding in 2005. UPE holds a variety of CS focused events throughout the year for the benefit of our peers. Tech talks and infosessions from industry leaders provide opportunities for students to connect with companies and obtain research and employment. Mentorship and tutoring foster the exchange of knowledge and wisdom between experienced students and those who are just starting out. This year, UPE will also offer workshops guiding students through the full-time/internship recruitment process specific to Software Engineering jobs. To find out more, please visit the UPE website.", joining: "To be eligible you must be majoring in Computer Science, Computer Science and Engineering, or Electrical Engineering with an emphasis in Computer Science, have a 3.5+ GPA, be in the top 1/3 of your class, and have Junior/Senior standing (90+ units).\r\n", deleted_at: nil},
   {name: "MentorSEAS", president: "Cheuk Yu", year: "2011", email: "mentorship.seas@gmail.com", website: "http://mentorship.seas.ucla.edu/", logo: "", description: "Founded in 2011, MentorSEAS is the official UCLA Engineering school-wide mentorship program that is provided automatically for all first-year freshmen and transfer students. We work closely with OASA (Office of Academic and Student Affairs) and other student organizations to hold/promote mentorship events. Our main goals are to provide more personal, peer-to-peer resources for new students in their UCLA engineering academic career and to help student organizations more easily reach out to new students and increase participation and membership, as well as increase inter-club collaboration and sharing of resources.", joining: "Any current engineering student who has a minimum of 3.0 GPA, will be attending UCLA for next academic year, and can attend a one-time training session during Week 0 are eligible to become a student mentor. Free T-shirts will be provided during the mentor training session. ", deleted_at: nil}
 ])
-#<Class:0x00000004cb4d60>.create!([
-  {club_type_id: 3, club_id: 1},
-  {club_type_id: 2, club_id: 2},
-  {club_type_id: 3, club_id: 2},
-  {club_type_id: 2, club_id: 3},
-  {club_type_id: 3, club_id: 3},
-  {club_type_id: 4, club_id: 4},
-  {club_type_id: 2, club_id: 5},
-  {club_type_id: 3, club_id: 5},
-  {club_type_id: 2, club_id: 7},
-  {club_type_id: 3, club_id: 7},
-  {club_type_id: 3, club_id: 8},
-  {club_type_id: 5, club_id: 9},
-  {club_type_id: 3, club_id: 10},
-  {club_type_id: 2, club_id: 11},
-  {club_type_id: 3, club_id: 11},
-  {club_type_id: 1, club_id: 12},
-  {club_type_id: 2, club_id: 13},
-  {club_type_id: 5, club_id: 14},
-  {club_type_id: 3, club_id: 15},
-  {club_type_id: 4, club_id: 16},
-  {club_type_id: 5, club_id: 17},
-  {club_type_id: 1, club_id: 18},
-  {club_type_id: 2, club_id: 19},
-  {club_type_id: 3, club_id: 19},
-  {club_type_id: 2, club_id: 20},
-  {club_type_id: 3, club_id: 20},
-  {club_type_id: 3, club_id: 21},
-  {club_type_id: 2, club_id: 22},
-  {club_type_id: 2, club_id: 23},
-  {club_type_id: 3, club_id: 23},
-  {club_type_id: 4, club_id: 24},
-  {club_type_id: 6, club_id: 25},
-  {club_type_id: 3, club_id: 26},
-  {club_type_id: 4, club_id: 26},
-  {club_type_id: 1, club_id: 27},
-  {club_type_id: 3, club_id: 28},
-  {club_type_id: 3, club_id: 29},
-  {club_type_id: 6, club_id: 29},
-  {club_type_id: 6, club_id: 30},
-  {club_type_id: 1, club_id: 31},
-  {club_type_id: 3, club_id: 32},
-  {club_type_id: 5, club_id: 32}
-])
-#<Class:0x00000004dfa0d0>.create!([
-  {club_id: 1, major_id: 6},
-  {club_id: 1, major_id: 7},
-  {club_id: 2, major_id: 2},
-  {club_id: 3, major_id: 4},
-  {club_id: 4, major_id: 1},
-  {club_id: 5, major_id: 6},
-  {club_id: 5, major_id: 7},
-  {club_id: 7, major_id: 5},
-  {club_id: 8, major_id: 9},
-  {club_id: 9, major_id: 1},
-  {club_id: 10, major_id: 3},
-  {club_id: 11, major_id: 5},
-  {club_id: 12, major_id: 5},
-  {club_id: 13, major_id: 2},
-  {club_id: 14, major_id: 1},
-  {club_id: 15, major_id: 1},
-  {club_id: 16, major_id: 1},
-  {club_id: 17, major_id: 1},
-  {club_id: 18, major_id: 7},
-  {club_id: 18, major_id: 8},
-  {club_id: 19, major_id: 7},
-  {club_id: 19, major_id: 8},
-  {club_id: 20, major_id: 5},
-  {club_id: 21, major_id: 3},
-  {club_id: 21, major_id: 4},
-  {club_id: 22, major_id: 6},
-  {club_id: 22, major_id: 7},
-  {club_id: 23, major_id: 9},
-  {club_id: 24, major_id: 1},
-  {club_id: 25, major_id: 1},
-  {club_id: 26, major_id: 1},
-  {club_id: 27, major_id: 1},
-  {club_id: 28, major_id: 1},
-  {club_id: 29, major_id: 1},
-  {club_id: 30, major_id: 1},
-  {club_id: 31, major_id: 6},
-  {club_id: 31, major_id: 7},
-  {club_id: 32, major_id: 1}
-])
 ClubType.create!([
   {name: "Honor Society"},
   {name: "Project"},
@@ -122,7 +38,7 @@ ClubType.create!([
   {name: "Service"},
   {name: "Greek"}
 ])
-#<Class:0x0000000505dca0>.create!([
+ClubTypeClub.create!([
   {club_type_id: 3, club_id: 1},
   {club_type_id: 2, club_id: 2},
   {club_type_id: 3, club_id: 2},
@@ -177,7 +93,7 @@ Major.create!([
   {name: "Electrical"},
   {name: "Materials"}
 ])
-#<Class:0x000000050ebeb0>.create!([
+ClubMajor.create!([
   {club_id: 1, major_id: 6},
   {club_id: 1, major_id: 7},
   {club_id: 2, major_id: 2},
@@ -218,5 +134,5 @@ Major.create!([
   {club_id: 32, major_id: 1}
 ])
 User.create!([
-  {username: "super_user", email: "shannon.tan1994@gmail.com", password: "clubon", site_admin: true, deleted_at: nil}
+  {username: "super_user", email: "shannon.tan1994@gmail.com", password: "clubon", password_confirmation: "clubon", site_admin: true, deleted_at: nil}
 ])

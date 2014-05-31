@@ -3,8 +3,12 @@ class Club < ActiveRecord::Base
   acts_as_paranoid
 
   # Model Associations
-  has_and_belongs_to_many :club_types
-  has_and_belongs_to_many :majors
+  has_many :club_type_clubs
+  has_many :club_types, through: :club_type_clubs
+  has_many :club_majors
+  has_many :majors, through: :club_majors
+  has_many :club_users
+  has_many :users, through: :club_users
 
   # Nested Attributes
   accepts_nested_attributes_for :club_types

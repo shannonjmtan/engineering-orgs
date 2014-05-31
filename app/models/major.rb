@@ -1,7 +1,8 @@
 class Major < ActiveRecord::Base
 
   # Model Associations
-  has_and_belongs_to_many :clubs
+  has_many :club_majors
+  has_many :clubs, through: :club_majors
 
   # Nested Attributes
 
