@@ -14,6 +14,9 @@
     <!-- Navbar contents -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if session[:current_user_id] != nil %>
+          <li class="<% if params[:action] == 'dashboard'%>active<% end %>"><%= link_to 'Admin', dashboard_path %></li>
+        <% end %>
         <li class="<% if params[:action] == 'about'%>active<% end %>"><%= link_to 'About', about_path%></li>
         <li class="<% if params[:action] == 'calendar'%>active<% end %>"><%= link_to 'Events Calendar', calendar_path %></li>
         <li class="<% if params[:action] == 'list'%>active<% end %>"><%= link_to 'List of Groups', list_path %></li>

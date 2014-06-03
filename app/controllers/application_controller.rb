@@ -20,9 +20,8 @@ class ApplicationController < ActionController::Base
     def check_super_user
       if current_user == nil
         redirect_to root_path
-      else if !current_user.site_admin
+      elsif !current_user.site_admin
         redirect_to root_path
-      end
       end
     end
 end

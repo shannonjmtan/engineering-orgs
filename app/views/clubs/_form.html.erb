@@ -33,10 +33,6 @@
         <%= f.text_field :website %>
       </div>
       <div class="form-group">
-        <%= f.label :logo %><br>
-        <%= f.text_area :logo %>
-      </div>
-      <div class="form-group">
         <%= f.label :club_types %><br>
         <%= f.collection_check_boxes :club_type_ids, ClubType.all, :id, :name %>
       </div>
