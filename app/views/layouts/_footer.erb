@@ -1,0 +1,24 @@
+<footer class="engr-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Club on!</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          If you'd like to contribute, please contact <a href="mailto:shannon.tan1994@gmail.com">Shannon Tan</a>
+        </p>
+        <% if session['current_user_id'] == nil %>
+          <%= link_to 'Login for Site Administration', login_path %>
+        <% end %>
+      </div>
+      <div class="col-md-6 text-right">
+        <p>
+          Made by <a href="https://github.com/shannontan94">Shannon Tan</a> • Designed by <a href="https://github.com/stevenla">Steven La</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

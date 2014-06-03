@@ -1,0 +1,49 @@
+<div class="engr-jumbotron engr-jumbotron-home">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Priceless experiences</h1>
+        <p>
+          Take part in numerous student organizations to enhance your world class education, participate in priceless experiences, and get competitive in the industry.
+        </p>
+        <p>
+          <%= link_to 'See the full list', list_path, :method => :get, :class => 'btn engr-btn-header btn-lg' %>
+          <%= link_to 'Check out events', calendar_path, :method => :get, :class => 'btn engr-btn-header-outline btn-lg' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="engr-blurbs">
+  <div class="container">
+    <div class="row">
+      <div class="engr-blurb col-md-6">
+        <span class="glyphicon glyphicon-book engr-blurbs-icon"></span>
+        <h3>Free Tutoring</h3>
+        <p>Tau Beta Pi, Eta Kappa Nu, and Upsilon Pi Epsilon, provide free drop-in tutoring. The School of Engineering also provides additional tutoring at night. To find their websites with this information, view the list of clubs!</p>
+      </div>
+
+      <div class="engr-blurb col-md-6">
+        <span class="glyphicon glyphicon-leaf engr-blurbs-icon"></span>
+        <h3>Student Affairs Counseling</h3>
+        <p>If you have any questions for the counselors, please visit <%= link_to 'this site', 'http://www.seasoasa.ucla.edu/' %> to find out more information and to contact them for an appointment.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="engr-blurb col-md-6">
+        <span class="glyphicon glyphicon-question-sign engr-blurbs-icon"></span>
+        <h3>Questions?</h3>
+        <p>Contact any of the Presidents via emails listed on their profiles with any questions about their club. General questions can go to <a href="mailto:shannon.tan1994@gmail.com">Shannon Tan</a>.</p>
+      </div>
+
+      <div class="engr-blurb col-md-6">
+        <span class="glyphicon glyphicon-thumbs-up engr-blurbs-icon"></span>
+        <h3>What are Student Organizations?</h3>
+        <p>Student organizations are entirely student run and host many events to benefit our community. For more reasons on why you should join, visit our <%= link_to "About", about_path %> page.</p>
+      </div>
+    </div>
+
+  </div>
+</div>

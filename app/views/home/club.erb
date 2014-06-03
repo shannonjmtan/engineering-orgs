@@ -1,0 +1,85 @@
+<div class="engr-jumbotron engr-jumbotron-profile">
+  <div class="container">
+    <div class="row">
+      <% if false %>
+      <div class="col-md-4 engr-jumbotron-logo">
+          <div class="thumbnail">
+            <%= image_tag("/assets/" + @club.logo, :class => 'img-responsive') %>
+          </div>
+      </div>
+      <div class="col-md-8">
+        <h1><%= @club.name %></h1>
+        <%= link_to 'Visit Our Website!', @club.website, :class => 'btn engr-btn-header btn' %>
+      </div>
+      <% else %>
+        <div class="col-md-12">
+          <h1><%= @club.name %></h1>
+          <% if @club.website %>
+            <%= link_to 'Visit Our Website!', @club.website, :class => 'btn engr-btn-header btn' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="engr-group-list">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <table class="table table-bordered">
+          <tbody>
+          <% if @club.president %>
+          <tr>
+            <th>President</th>
+            <td><%= @club.president %></td>
+          </tr>
+          <% end %>
+          <% if @club.email %>
+          <tr>
+            <th>Contact</th>
+            <td><%= @club.email %></td>
+          </tr>
+          <% end %>
+          <% if @club.year != "" %>
+          <tr>
+            <th>Year Founded</th>
+            <td><%= @club.year %></td>
+          </tr>
+          <% end %>
+          <% if @club.club_types.count > 0 %>
+          <tr>
+            <th>Type</th>
+            <td>
+              <% @club.club_types.each do |t| %>
+                <%= t.name %><br>
+              <% end%>
+            </td>
+          </tr>
+          <% end %>
+          <% if @club.majors.count > 0 %>
+            <tr>
+              <th>Majors</th>
+              <td>
+                <% @club.majors.each do |m| %>
+                  <%= m.name %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-8">
+        <p><%= @club.description %></p>
+
+        <h3>How to join</h3>
+        <p><%= @club.joining %></p>
+
+      </div>
+
+    </div>
+  </div>
+</div>

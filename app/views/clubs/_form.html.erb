@@ -1,0 +1,59 @@
+
+    <%= form_for(@club) do |f| %>
+      <% if @club.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+          <ul>
+            <% @club.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :president %><br>
+        <%= f.text_field :president %><br>
+      </div>
+      <div class="form-group">
+        <%= f.label :year %><br>
+        <%= f.text_field :year %><br>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="form-group">
+        <%= f.label :website %><br>
+        <%= f.text_field :website %>
+      </div>
+      <div class="form-group">
+        <%= f.label :logo %><br>
+        <%= f.text_area :logo %>
+      </div>
+      <div class="form-group">
+        <%= f.label :club_types %><br>
+        <%= f.collection_check_boxes :club_type_ids, ClubType.all, :id, :name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :major_ids %><br>
+        <%= f.collection_check_boxes :major_ids, Major.all, :id, :name %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, :rows => '10', :cols => '100'  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :joining %><br>
+        <%= f.text_area :joining, :rows => '10', :cols => '100' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+      </div>
+    <% end %>
+
