@@ -12,6 +12,8 @@
         </p>
         <% if session['current_user_id'] == nil %>
           <%= link_to 'Login for Site Administration', login_path %>
+        <% else %>
+          <%= link_to 'Logout', destroy_login_path, :method => :delete %>
         <% end %>
       </div>
       <div class="col-md-6 text-right">

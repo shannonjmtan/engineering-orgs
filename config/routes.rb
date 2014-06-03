@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/dashboard' => 'users#dashboard', as: :dashboard
   resources :users
   resources :clubs
 
   root 'home#home'
 
-  match "login/login" => "login#login", as: :login, via: [:get]
-  match "login/create" => "login#create", as: :create_login, via: [:post]
-  post "login/destroy" => "login#destroy", as: :destroy_login, via: [:delete]
+  get "login/login" => "login#login", as: :login
+  post "login/create" => "login#create", as: :create_login
+  delete "login/logout" => "login#destroy", as: :destroy_login
 
   match 'home/list' => 'home#list', as: :list, via: [:get]
   match 'home/about' => 'home#about', as: :about, via: [:get]

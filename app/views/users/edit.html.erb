@@ -1,6 +1,18 @@
-<h1>Editing user</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="engr-jumbotron engr-jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Edit Information</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= render 'form', :create => false %>
+    <%= button_to 'Back', clubs_path, :class => 'btn btn-primary', :method => :get  %>
+  </div>
+</div>

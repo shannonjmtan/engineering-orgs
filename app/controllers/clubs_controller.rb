@@ -1,17 +1,22 @@
 class ClubsController < ApplicationController
   before_action :set_club, only: [:show, :edit, :update, :destroy]
-  before_action :check_super_user
 
   # GET /clubs
   # GET /clubs.json
   def index
-    @clubs = Club.all.order(:name)
+    @user = current_user
+    if @user.site_admin
+      @clubs = Club.all.order(:name)
+    elsif @user
+      @clubs = @user.clubs
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /clubs/1
   # GET /clubs/1.json
-  def show
-  end
+  def show; end
 
   # GET /clubs/new
   def new
@@ -19,8 +24,7 @@ class ClubsController < ApplicationController
   end
 
   # GET /clubs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /clubs
   # POST /clubs.json
@@ -28,6 +32,8 @@ class ClubsController < ApplicationController
     @club = Club.new(club_params)
     @club.club_type_ids = club_type_ids
     @club.major_ids = major_ids
+    @club.user_ids = current_user.id
+
     respond_to do |format|
       if @club.save
         format.html { redirect_to @club, notice: 'Club was successfully created.' }
@@ -43,10 +49,12 @@ class ClubsController < ApplicationController
   # PATCH/PUT /clubs/1.json
   def update
     respond_to do |format|
+
       @club.club_type_ids = club_type_ids
       @club.major_ids = major_ids
+
       if @club.update(club_params)
-        format.html { redirect_to @club, notice: 'Club was successfully updated.' }
+        format.html { redirect_to dashboard_path, notice: 'Club was successfully updated.' }
         format.json { render :show, status: :ok, location: @club }
       else
         format.html { render :edit }

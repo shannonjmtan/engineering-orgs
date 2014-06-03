@@ -4,11 +4,15 @@ class LoginController < ApplicationController
 
   # "Create" a login, aka "log the user in"
   def create
+    if session[:current_user_id] != nil
+      redirect_to dashboard_path
+      return
+    end
     if user = User.authenticate(params[:login][:username], params[:login][:password])
       # Save the user ID in the session so it can be used in
       # subsequent requests
       session[:current_user_id] = user.id
-      redirect_to user_path(user.id)
+      redirect_to dashboard_path
     else
       flash[:login] = "Did you forget your password or username?"
       render action: "login"
