@@ -1,0 +1,22 @@
+.engr-blurbs {
+	padding-top: $grid-gutter-width;
+	text-align: center;
+
+	p {
+		text-align: left;
+	}
+
+	.engr-blurbs-icon {
+		background-color: $brand-primary;
+		border-radius: 100px;
+		padding: 20px;
+
+		font-size: 3em;
+		color: white;
+		text-shadow: darken($brand-primary, 10%) 2px 2px;
+	}
+
+	.engr-blurb {
+		margin-bottom: $grid-gutter-width;
+	}
+}

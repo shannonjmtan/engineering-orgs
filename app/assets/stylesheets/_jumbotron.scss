@@ -1,0 +1,68 @@
+// TODO: move these out of this file
+$engr-header-padding-large: 5 * $jumbotron-padding;
+
+.engr-jumbotron {
+	@extend .jumbotron;
+	// Account for the navbar which is absolutely positioned
+	padding-top: $navbar-height + $jumbotron-padding;
+	padding-left: 0;
+	padding-right: 0;
+	margin-bottom: $grid-gutter-width;
+
+	background-position: center;
+	background-size: cover;
+
+	-webkit-font-smoothing: antialiased;
+
+	h1 {
+		font-family: $header-font-family;
+		font-weight: lighter;
+	}
+
+	.btn-lg {
+		font-size: $jumbotron-font-size;
+	}
+
+	.engr-btn-header {
+		color: $brand-primary;
+		background-color: $brand-secondary;
+		border-color: $brand-secondary;
+	}
+
+	.engr-btn-header-outline {
+		color: $brand-secondary;
+		background-color: transparent;
+		border-color: $brand-secondary;
+	}
+
+	.engr-jumbotron-logo {
+		text-align: center;
+		padding-top: $padding-large-vertical;
+
+		.thumbnail {
+			margin-bottom: 0;
+		}
+
+		img {
+			max-height: 150px;
+		}
+	}
+}
+
+.engr-jumbotron-home {
+	padding-top: $navbar-height + $engr-header-padding-large;
+	padding-bottom: $engr-header-padding-large;
+	background-image: image-url('banners/boat.jpg');
+}
+
+.engr-jumbotron-list {
+	background-image: image-url('banners/baja.jpg');
+}
+
+.engr-jumbotron-about {
+	background-image: image-url('banners/bridge.jpg');
+}
+
+.engr-jumbotron-calendar {
+	background-image: image-url('banners/aiaa.jpg');
+}

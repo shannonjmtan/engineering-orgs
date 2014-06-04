@@ -1,0 +1,526 @@
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "club_majors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "major_id" integer, "club_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_club_majors_on_club_id" ON "club_majors" ("club_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_club_majors_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_club_majors_on_club_id' AND type='index'
+
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX "index_club_majors_on_major_id" ON "club_majors" ("major_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "club_type_clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "club_type_id" integer, "club_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_club_type_clubs_on_club_id" ON "club_type_clubs" ("club_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_club_type_clubs_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_club_type_clubs_on_club_id' AND type='index'
+
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_club_type_clubs_on_club_type_id" ON "club_type_clubs" ("club_type_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "club_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "club_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "club_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX "index_club_users_on_club_id" ON "club_users" ("club_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_club_users_on_club_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_club_users_on_club_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  CREATE  INDEX "index_club_users_on_user_id" ON "club_users" ("user_id")
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "clubs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "president" varchar(255), "year" varchar(255), "email" varchar(255), "website" varchar(255), "logo" text, "description" text, "joining" text, "deleted_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "majors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "password" varchar(255), "site_admin" boolean DEFAULT 'f', "deleted_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140531062508')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140413022611')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140413061138')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140413080842')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140413082606')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140531062317')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140531062439')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "club_majors"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_type_clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_types"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:29:43', '2014-06-03 23:29:43', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)[0m
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:29:43', '2014-06-03 23:29:43', 980190962)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "club_majors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_majors" ("major_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_type_clubs"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_type_clubs" ("club_type_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "club_types"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_types" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "club_users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "club_users" ("user_id", "club_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-06-03 23:42:08', '2014-06-03 23:42:08', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "clubs"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+SQLite3::SQLException: table clubs has no column named type: INSERT INTO "clubs" ("name", "email", "website", "type", "major", "description", "joining", "deleted_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, 1, 'MyText', 'MyText', '2014-04-12 19:26:11.000000', '2014-06-03 23:42:08', '2014-06-03 23:42:08', 980190962)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
