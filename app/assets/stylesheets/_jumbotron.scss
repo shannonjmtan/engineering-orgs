@@ -49,6 +49,14 @@ $engr-header-padding-large: 5 * $jumbotron-padding;
 	}
 }
 
+.engr-jumbotron-mini {
+	padding-top: $navbar-height + ($jumbotron-padding / 2);
+	padding-bottom: $jumbotron-padding / 2;
+	h1 {
+		font-size: $font-size-h1; 
+	}
+}
+
 .engr-jumbotron-home {
 	padding-top: $navbar-height + $engr-header-padding-large;
 	padding-bottom: $engr-header-padding-large;

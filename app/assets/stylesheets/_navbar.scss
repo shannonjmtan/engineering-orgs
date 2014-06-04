@@ -66,4 +66,10 @@
 		}
 	}
 
+	@media (max-width: $grid-float-breakpoint) {
+		.navbar-collapse {
+			background-color: darken(desaturate($brand-primary, 20), 15);
+		}
+	}
+
 }
